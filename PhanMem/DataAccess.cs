@@ -20,14 +20,14 @@ namespace PhanMem
         private void SetConnection()
         {
             //sql_Con = new SQLiteConnection(@"Data Source=D:\ManhHX\OutSource\PhanMem\PhanMem\Data\QuanLy.sqlite;Version=3;");
-            sql_Con = new SQLiteConnection(@"Data Source=E:\Working\Github\working-copy\PhanMem\PhanMem\Data\QuanLy.sqlite;Version=3;");
+            sql_Con = new SQLiteConnection(@"Data Source=E:\Working\Github\working-copy\PhanMem\Data\QuanLy.sqlite;Version=3;");
             //sql_Con = new SQLiteConnection(@"Data Source=Data\QuanLy.sqlite;Version=3;");
         }
 
         public string SourceFile()
         {
             //return @"D:\ManhHX\OutSource\PhanMem\PhanMem\";
-            return @"E:\Working\Github\working-copy\PhanMem\PhanMem\";
+            return @"E:\Working\Github\working-copy\PhanMem\";
             //return "";
         }
 

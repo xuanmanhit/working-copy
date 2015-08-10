@@ -54,6 +54,8 @@ namespace PhanMem
                     File.Delete(sfdXuatExcel.FileName);
                 string source = DA.SourceFile() + @"Data\Cat-Ngay.xlsx";
                 string des = @"D:\Cat-Ngay.xlsx";
+                if (File.Exists(des))
+                    File.Delete(des);
                 string newdes = sfdXuatExcel.FileName;
                 File.Copy(source, des);
 
@@ -99,6 +101,11 @@ namespace PhanMem
                     worksheet.Cells[5, 9].Value = Convert.ToInt32(dt.Compute("SUM(TongTien)", ""));
                     worksheet.Cells[5, 10].Value = Convert.ToInt32(dt.Compute("SUM(TienCong)", ""));
                     worksheet.Cells[5, 11].Value = Convert.ToInt32(dt.Compute("SUM(TienCongPhu)", ""));
+
+                    worksheet.Cells[5, 14].Value = Convert.ToInt32(dtth.Compute("SUM(TongTien)", ""));
+                    worksheet.Cells[5, 15].Value = Convert.ToInt32(dtth.Compute("SUM(TienCong)", ""));
+                    worksheet.Cells[5, 16].Value = Convert.ToInt32(dtth.Compute("SUM(TienCongPhu)", ""));
+                    worksheet.Cells[5, 17].Value = Convert.ToInt32(dtth.Compute("SUM(TongCong)", ""));
 
                     worksheet.Column(7).Style.Numberformat.Format = "#,##0";
                     worksheet.Column(9).Style.Numberformat.Format = "#,##0";
