@@ -36,7 +36,7 @@ namespace PhanMem
         public void LoadGrid(string ngayCong)
         {
             gvBaoCaoNgay.AutoGenerateColumns = false;
-            gvBaoCaoNgay.DataSource = DA.List_BcCongCat(ngayCong);
+            gvBaoCaoNgay.DataSource = DA.ChiTietCongCat(ngayCong);
         }
 
         private void btXem_Click(object sender, EventArgs e)
@@ -46,42 +46,21 @@ namespace PhanMem
 
         private void btExport_Click(object sender, EventArgs e)
         {
-            string source = DA.SourceFile() + @"Data\Cat-Ngay.xlsx";
-            string des = @"D:\Cat-Ngay.xlsx";
-            string newdes = @"D:\Cat-Ngay-" + DateTimeSQLite(dtpNgayCong.Value) + ".xlsx";
-            int check = 0;
-            if (File.Exists(newdes))
+            sfdXuatExcel.FileName = "Cat-Ngay-" + DateTimeSQLite(dtpNgayCong.Value) + ".xlsx";
+            sfdXuatExcel.Filter = "Excel File|*.xlsx";            
+            if (sfdXuatExcel.ShowDialog() == DialogResult.OK)
             {
-                DialogResult dr = MessageBox.Show("File này đang tồn tại, bạn có muốn ghi đè lên không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
-                if (dr == DialogResult.Yes)
-                {
-                    try
-                    {
-                        File.Delete(des);
-                        File.Delete(newdes);
-                        File.Copy(source, des);
-                        check = 1;
-                    }
-                    catch
-                    {
-                        MessageBox.Show("File " + newdes + " đang được mở, bạn vui lòng đóng file này lại trước!");
-                        check = 0;
-                    }
-                }
-            }
-            else
-            {
-                File.Delete(des);
+                if (File.Exists(sfdXuatExcel.FileName))
+                    File.Delete(sfdXuatExcel.FileName);
+                string source = DA.SourceFile() + @"Data\Cat-Ngay.xlsx";
+                string des = @"D:\Cat-Ngay.xlsx";
+                string newdes = sfdXuatExcel.FileName;
                 File.Copy(source, des);
-                check = 1;
-            }
 
-            if (check != 0)
-            {
                 using (ExcelPackage package = new ExcelPackage(new FileInfo(des)))
                 {
-                    DataTable dt = DA.List_BcCongCat(DateTimeSQLite(dtpNgayCong.Value));
-                    DataTable dtth = DA.List_BcCongCatTongHop(DateTimeSQLite(dtpNgayCong.Value));
+                    DataTable dt = DA.ChiTietCongCat(DateTimeSQLite(dtpNgayCong.Value));
+                    DataTable dtth = DA.TongHopCongCat(DateTimeSQLite(dtpNgayCong.Value));
 
                     ExcelWorksheet worksheet = package.Workbook.Worksheets["Sheet1"];
                     int rowCount = dt.Rows.Count;
@@ -130,7 +109,7 @@ namespace PhanMem
                     worksheet.Column(16).Style.Numberformat.Format = "#,##0";
                     worksheet.Column(17).Style.Numberformat.Format = "#,##0";
                     package.Save();
-
+                    
                     File.Move(des, newdes);
                     MessageBox.Show("Đã xuất file thành công, đường dẫn: " + newdes);
                 }

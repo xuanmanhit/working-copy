@@ -20,14 +20,14 @@ namespace PhanMem
         private void SetConnection()
         {
             //sql_Con = new SQLiteConnection(@"Data Source=D:\ManhHX\OutSource\PhanMem\PhanMem\Data\QuanLy.sqlite;Version=3;");
-            sql_Con = new SQLiteConnection(@"Data Source=E:\Working\PhanMem\PhanMem\Data\QuanLy.sqlite;Version=3;");
+            sql_Con = new SQLiteConnection(@"Data Source=E:\Working\Github\working-copy\PhanMem\PhanMem\Data\QuanLy.sqlite;Version=3;");
             //sql_Con = new SQLiteConnection(@"Data Source=Data\QuanLy.sqlite;Version=3;");
         }
 
         public string SourceFile()
         {
             //return @"D:\ManhHX\OutSource\PhanMem\PhanMem\";
-            return @"E:\Working\PhanMem\PhanMem\";
+            return @"E:\Working\Github\working-copy\PhanMem\PhanMem\";
             //return "";
         }
 
@@ -318,7 +318,7 @@ namespace PhanMem
 
         #region Báo cáo Công Cắt
 
-        public DataTable List_BcCongCat(string ngayCong)
+        public DataTable ChiTietCongCat(string ngayCong)
         {
             string cmd = "SELECT * FROM vCongCat WHERE NgayCat='" + ngayCong + "'";
             DataTable tbl = LoadData(cmd);
@@ -328,9 +328,21 @@ namespace PhanMem
             return tbl;
         }
 
-        public DataTable List_BcCongCatTongHop(string ngayCong)
+        public DataTable TongHopCongCat(string ngayCong)
         {
             string cmd = "SELECT * FROM vCongCatTongHop WHERE NgayCat='" + ngayCong + "'";
+            return LoadData(cmd);
+        }
+
+        public DataTable ChiTietLuongCat(string tungay, string denngay)
+        {
+            string cmd = "SELECT * FROM vCongCat WHERE NgayCat>='" + tungay + "' AND NgayCat<='" + denngay + "'";
+            return LoadData(cmd);
+        }
+
+        public DataTable TongHopLuongCat(string tungay, string denngay)
+        {
+            string cmd = "SELECT * FROM vCongCatTongHop WHERE NgayCat>='" + tungay + "' AND NgayCat<='" + denngay + "'";
             return LoadData(cmd);
         }
 

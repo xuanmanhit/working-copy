@@ -45,6 +45,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.btExport = new System.Windows.Forms.Button();
             this.dtpNgayCong = new System.Windows.Forms.DateTimePicker();
+            this.sfdXuatExcel = new System.Windows.Forms.SaveFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.gvBaoCaoNgay)).BeginInit();
             this.SuspendLayout();
             // 
@@ -251,5 +252,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn gtxtSoluongSP;
         private System.Windows.Forms.DataGridViewTextBoxColumn gtxtLuongSP;
         private System.Windows.Forms.DataGridViewTextBoxColumn gtxtCongNhat;
+        private System.Windows.Forms.SaveFileDialog sfdXuatExcel;
     }
 }
