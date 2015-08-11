@@ -216,7 +216,7 @@ namespace PhanMem
 
         public DataTable List_CongCat()
         {
-            string cmd = "SELECT * FROM vDsCongCat";
+            string cmd = "SELECT * FROM vCat_DsHienThi";
             DataTable tbl = LoadData(cmd);
             tbl.Columns.Add("STT", typeof(Int32));
             for (int i = 0; i < tbl.Rows.Count; i++)
@@ -266,7 +266,7 @@ namespace PhanMem
 
         public DataTable Load_CongCat(string[] param)
         {
-            string cmd = "SELECT * FROM vDsCongCat_Edit WHERE ID={0}";
+            string cmd = "SELECT * FROM vCat_DsCapNhat WHERE ID={0}";
             cmd = String.Format(cmd, param);
             return LoadData(cmd);
         }
@@ -277,7 +277,7 @@ namespace PhanMem
 
         public DataTable List_CongCatPhu()
         {
-            string cmd = "SELECT * FROM vDsCongCatPhu";
+            string cmd = "SELECT * FROM vCat_DsViecPhu";
             DataTable tbl = LoadData(cmd);
             tbl.Columns.Add("STT", typeof(Int32));
             for (int i = 0; i < tbl.Rows.Count; i++)
@@ -309,18 +309,18 @@ namespace PhanMem
 
         public DataTable Load_CongCatPhu(string[] param)
         {
-            string cmd = "SELECT ID,strftime('%m/%d/%Y', NgayCong) as NgayCong,CongNhan,CongViec,GioCong,GiaCong WHERE ID={0}";
+            string cmd = "SELECT ID,strftime('%m/%d/%Y', NgayCong) as NgayCong,CongNhan,CongViec,GioCong,GiaCong FROM tblCongCatPhu WHERE ID={0}";
             cmd = String.Format(cmd, param);
             return LoadData(cmd);
         }
 
         #endregion
 
-        #region Báo cáo Công Cắt
+        #region Báo cáo Cắt
 
         public DataTable ChiTietCongCat(string ngayCong)
         {
-            string cmd = "SELECT * FROM vCongCat WHERE NgayCat='" + ngayCong + "'";
+            string cmd = "SELECT * FROM vCat_DsCongChiTiet WHERE NgayCat='" + ngayCong + "'";
             DataTable tbl = LoadData(cmd);
             tbl.Columns.Add("STT", typeof(Int32));
             for (int i = 0; i < tbl.Rows.Count; i++)
@@ -330,19 +330,36 @@ namespace PhanMem
 
         public DataTable TongHopCongCat(string ngayCong)
         {
-            string cmd = "SELECT * FROM vCongCatTongHop WHERE NgayCat='" + ngayCong + "'";
+            string cmd = "SELECT * FROM vCat_DsCongTongHop WHERE NgayCat='" + ngayCong + "'";
             return LoadData(cmd);
         }
 
-        public DataTable ChiTietLuongCat(string tungay, string denngay)
+        public void Edit_ThamSo(string[] param)
         {
-            string cmd = "SELECT * FROM vCongCat WHERE NgayCat>='" + tungay + "' AND NgayCat<='" + denngay + "'";
+            string cmd = "UPDATE tblThamSo SET TuNgay='{0}',DenNgay='{1}',CongNhan={2} WHERE ID=1";
+            cmd = String.Format(cmd, param);
+            ExecuteQuery(cmd);
+        }
+
+        public DataTable DsLuongCat()
+        {
+            string cmd = "SELECT * FROM vCat_DsLuongTongHop";
+            DataTable tbl = LoadData(cmd);
+            tbl.Columns.Add("STT", typeof(Int32));
+            for (int i = 0; i < tbl.Rows.Count; i++)
+                tbl.Rows[i]["STT"] = i + 1;
+            return tbl;
+        }
+
+        public DataTable LuongCatChiTiet()
+        {
+            string cmd = "SELECT * FROM vCat_LuongChiTiet";
             return LoadData(cmd);
         }
 
-        public DataTable TongHopLuongCat(string tungay, string denngay)
+        public DataTable LuongCatTongHop()
         {
-            string cmd = "SELECT * FROM vCongCatTongHop WHERE NgayCat>='" + tungay + "' AND NgayCat<='" + denngay + "'";
+            string cmd = "SELECT * FROM vCat_LuongTongHop";
             return LoadData(cmd);
         }
 

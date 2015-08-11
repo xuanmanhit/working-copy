@@ -120,7 +120,7 @@
             // 
             this.btBack.Location = new System.Drawing.Point(692, 12);
             this.btBack.Name = "btBack";
-            this.btBack.Size = new System.Drawing.Size(80, 40);
+            this.btBack.Size = new System.Drawing.Size(80, 36);
             this.btBack.TabIndex = 1;
             this.btBack.Text = "Trở lại";
             this.btBack.UseVisualStyleBackColor = true;
@@ -130,7 +130,7 @@
             // 
             this.btThem.Location = new System.Drawing.Point(606, 12);
             this.btThem.Name = "btThem";
-            this.btThem.Size = new System.Drawing.Size(80, 40);
+            this.btThem.Size = new System.Drawing.Size(80, 36);
             this.btThem.TabIndex = 0;
             this.btThem.Text = "Thêm";
             this.btThem.UseVisualStyleBackColor = true;

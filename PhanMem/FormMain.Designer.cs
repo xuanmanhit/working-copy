@@ -34,10 +34,11 @@
             this.bt_qlCongNhan = new System.Windows.Forms.Button();
             this.btExit = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btBcTongHop = new System.Windows.Forms.Button();
             this.btBcNgay = new System.Windows.Forms.Button();
             this.btCongPhu = new System.Windows.Forms.Button();
             this.btNhapCat = new System.Windows.Forms.Button();
-            this.btBcTongHop = new System.Windows.Forms.Button();
+            this.btLuong = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -49,9 +50,9 @@
             this.groupBox1.Controls.Add(this.bt_qlCongNhan);
             this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(16, 16);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(5);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(5);
             this.groupBox1.Size = new System.Drawing.Size(191, 372);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
@@ -60,7 +61,7 @@
             // btViecPhu
             // 
             this.btViecPhu.Location = new System.Drawing.Point(21, 146);
-            this.btViecPhu.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.btViecPhu.Margin = new System.Windows.Forms.Padding(5);
             this.btViecPhu.Name = "btViecPhu";
             this.btViecPhu.Size = new System.Drawing.Size(150, 50);
             this.btViecPhu.TabIndex = 3;
@@ -71,7 +72,7 @@
             // btKhoVai
             // 
             this.btKhoVai.Location = new System.Drawing.Point(21, 86);
-            this.btKhoVai.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.btKhoVai.Margin = new System.Windows.Forms.Padding(5);
             this.btKhoVai.Name = "btKhoVai";
             this.btKhoVai.Size = new System.Drawing.Size(150, 50);
             this.btKhoVai.TabIndex = 1;
@@ -82,7 +83,7 @@
             // bt_qlCongNhan
             // 
             this.bt_qlCongNhan.Location = new System.Drawing.Point(21, 26);
-            this.bt_qlCongNhan.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.bt_qlCongNhan.Margin = new System.Windows.Forms.Padding(5);
             this.bt_qlCongNhan.Name = "bt_qlCongNhan";
             this.bt_qlCongNhan.Size = new System.Drawing.Size(150, 50);
             this.bt_qlCongNhan.TabIndex = 0;
@@ -93,7 +94,7 @@
             // btExit
             // 
             this.btExit.Location = new System.Drawing.Point(690, 408);
-            this.btExit.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.btExit.Margin = new System.Windows.Forms.Padding(5);
             this.btExit.Name = "btExit";
             this.btExit.Size = new System.Drawing.Size(80, 40);
             this.btExit.TabIndex = 1;
@@ -103,24 +104,36 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.btLuong);
             this.groupBox2.Controls.Add(this.btBcTongHop);
             this.groupBox2.Controls.Add(this.btBcNgay);
             this.groupBox2.Controls.Add(this.btCongPhu);
             this.groupBox2.Controls.Add(this.btNhapCat);
             this.groupBox2.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(206, 16);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(5);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(5);
             this.groupBox2.Size = new System.Drawing.Size(189, 372);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Quản lý thông tin Cắt";
             // 
+            // btBcTongHop
+            // 
+            this.btBcTongHop.Location = new System.Drawing.Point(19, 266);
+            this.btBcTongHop.Margin = new System.Windows.Forms.Padding(5);
+            this.btBcTongHop.Name = "btBcTongHop";
+            this.btBcTongHop.Size = new System.Drawing.Size(150, 50);
+            this.btBcTongHop.TabIndex = 3;
+            this.btBcTongHop.Text = "Báo cáo Tổng hợp";
+            this.btBcTongHop.UseVisualStyleBackColor = true;
+            this.btBcTongHop.Click += new System.EventHandler(this.btBcTongHop_Click);
+            // 
             // btBcNgay
             // 
             this.btBcNgay.Location = new System.Drawing.Point(19, 146);
-            this.btBcNgay.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.btBcNgay.Margin = new System.Windows.Forms.Padding(5);
             this.btBcNgay.Name = "btBcNgay";
             this.btBcNgay.Size = new System.Drawing.Size(150, 50);
             this.btBcNgay.TabIndex = 2;
@@ -131,7 +144,7 @@
             // btCongPhu
             // 
             this.btCongPhu.Location = new System.Drawing.Point(19, 86);
-            this.btCongPhu.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.btCongPhu.Margin = new System.Windows.Forms.Padding(5);
             this.btCongPhu.Name = "btCongPhu";
             this.btCongPhu.Size = new System.Drawing.Size(150, 50);
             this.btCongPhu.TabIndex = 1;
@@ -142,7 +155,7 @@
             // btNhapCat
             // 
             this.btNhapCat.Location = new System.Drawing.Point(19, 26);
-            this.btNhapCat.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.btNhapCat.Margin = new System.Windows.Forms.Padding(5);
             this.btNhapCat.Name = "btNhapCat";
             this.btNhapCat.Size = new System.Drawing.Size(150, 50);
             this.btNhapCat.TabIndex = 0;
@@ -150,16 +163,16 @@
             this.btNhapCat.UseVisualStyleBackColor = true;
             this.btNhapCat.Click += new System.EventHandler(this.btNhapCat_Click);
             // 
-            // btBcTongHop
+            // btLuong
             // 
-            this.btBcTongHop.Location = new System.Drawing.Point(19, 206);
-            this.btBcTongHop.Margin = new System.Windows.Forms.Padding(5);
-            this.btBcTongHop.Name = "btBcTongHop";
-            this.btBcTongHop.Size = new System.Drawing.Size(150, 50);
-            this.btBcTongHop.TabIndex = 3;
-            this.btBcTongHop.Text = "Báo cáo Tổng hợp";
-            this.btBcTongHop.UseVisualStyleBackColor = true;
-            this.btBcTongHop.Click += new System.EventHandler(this.btBcTongHop_Click);
+            this.btLuong.Location = new System.Drawing.Point(19, 206);
+            this.btLuong.Margin = new System.Windows.Forms.Padding(5);
+            this.btLuong.Name = "btLuong";
+            this.btLuong.Size = new System.Drawing.Size(150, 50);
+            this.btLuong.TabIndex = 4;
+            this.btLuong.Text = "Tổng hợp Lương";
+            this.btLuong.UseVisualStyleBackColor = true;
+            this.btLuong.Click += new System.EventHandler(this.btLuong_Click);
             // 
             // FormMain
             // 
@@ -172,7 +185,7 @@
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.MaximizeBox = false;
             this.Name = "FormMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -195,6 +208,7 @@
         private System.Windows.Forms.Button btCongPhu;
         private System.Windows.Forms.Button btBcNgay;
         private System.Windows.Forms.Button btBcTongHop;
+        private System.Windows.Forms.Button btLuong;
     }
 }
 

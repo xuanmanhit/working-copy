@@ -67,9 +67,9 @@
             // 
             // btHuy
             // 
-            this.btHuy.Location = new System.Drawing.Point(174, 236);
+            this.btHuy.Location = new System.Drawing.Point(174, 240);
             this.btHuy.Name = "btHuy";
-            this.btHuy.Size = new System.Drawing.Size(100, 40);
+            this.btHuy.Size = new System.Drawing.Size(80, 36);
             this.btHuy.TabIndex = 20;
             this.btHuy.Text = "Hủy";
             this.btHuy.UseVisualStyleBackColor = true;
@@ -127,9 +127,9 @@
             // 
             // btThem
             // 
-            this.btThem.Location = new System.Drawing.Point(68, 236);
+            this.btThem.Location = new System.Drawing.Point(72, 240);
             this.btThem.Name = "btThem";
-            this.btThem.Size = new System.Drawing.Size(100, 40);
+            this.btThem.Size = new System.Drawing.Size(80, 36);
             this.btThem.TabIndex = 19;
             this.btThem.Text = "Thêm";
             this.btThem.UseVisualStyleBackColor = true;
@@ -374,7 +374,7 @@
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.MaximizeBox = false;
             this.Name = "ttCongCat";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

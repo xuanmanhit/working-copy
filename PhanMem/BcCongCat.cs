@@ -80,7 +80,7 @@ namespace PhanMem
                         worksheet.Cells[i + 6, 6].Value = double.Parse(dt.Rows[i]["TongSpTruPhe"].ToString());
                         worksheet.Cells[i + 6, 7].Value = Convert.ToInt32(dt.Rows[i]["TongSoLuongSP"].ToString());
                         worksheet.Cells[i + 6, 8].Value = Convert.ToInt32(dt.Rows[i]["DonGia"].ToString());
-                        worksheet.Cells[i + 6, 9].Value = Convert.ToInt32(dt.Rows[i]["TongTien"].ToString());
+                        worksheet.Cells[i + 6, 9].Value = Convert.ToInt32(dt.Rows[i]["TienSP"].ToString());
                         worksheet.Cells[i + 6, 10].Value = Convert.ToInt32(dt.Rows[i]["TienCong"].ToString());
                         worksheet.Cells[i + 6, 11].Value = Convert.ToInt32(dt.Rows[i]["TienCongPhu"].ToString());
                     }
@@ -88,24 +88,24 @@ namespace PhanMem
                     for (int i = 0; i < rowCountTH; i++)
                     {
                         worksheet.Cells[i + 6, 13].Value = dtth.Rows[i]["HoTen"].ToString();
-                        worksheet.Cells[i + 6, 14].Value = Convert.ToInt32(dtth.Rows[i]["TongTien"].ToString());
+                        worksheet.Cells[i + 6, 14].Value = Convert.ToInt32(dtth.Rows[i]["TienSP"].ToString());
                         worksheet.Cells[i + 6, 15].Value = Convert.ToInt32(dtth.Rows[i]["TienCong"].ToString());
                         worksheet.Cells[i + 6, 16].Value = Convert.ToInt32(dtth.Rows[i]["TienCongPhu"].ToString());
-                        worksheet.Cells[i + 6, 17].Value = Convert.ToInt32(dtth.Rows[i]["TongCong"].ToString());
+                        worksheet.Cells[i + 6, 17].Value = Convert.ToInt32(dtth.Rows[i]["TongTien"].ToString());
                     }
 
                     worksheet.Cells[5, 4].Value = double.Parse(dt.Compute("SUM(TongKgCat)", "").ToString());
                     worksheet.Cells[5, 5].Value = Convert.ToInt32(dt.Compute("SUM(TongOng)", ""));
                     worksheet.Cells[5, 6].Value = double.Parse(dt.Compute("SUM(TongSpTruPhe)", "").ToString());
                     worksheet.Cells[5, 7].Value = Convert.ToInt32(dt.Compute("SUM(TongSoLuongSP)", ""));
-                    worksheet.Cells[5, 9].Value = Convert.ToInt32(dt.Compute("SUM(TongTien)", ""));
+                    worksheet.Cells[5, 9].Value = Convert.ToInt32(dt.Compute("SUM(TienSP)", ""));
                     worksheet.Cells[5, 10].Value = Convert.ToInt32(dt.Compute("SUM(TienCong)", ""));
                     worksheet.Cells[5, 11].Value = Convert.ToInt32(dt.Compute("SUM(TienCongPhu)", ""));
 
-                    worksheet.Cells[5, 14].Value = Convert.ToInt32(dtth.Compute("SUM(TongTien)", ""));
+                    worksheet.Cells[5, 14].Value = Convert.ToInt32(dtth.Compute("SUM(TienSP)", ""));
                     worksheet.Cells[5, 15].Value = Convert.ToInt32(dtth.Compute("SUM(TienCong)", ""));
                     worksheet.Cells[5, 16].Value = Convert.ToInt32(dtth.Compute("SUM(TienCongPhu)", ""));
-                    worksheet.Cells[5, 17].Value = Convert.ToInt32(dtth.Compute("SUM(TongCong)", ""));
+                    worksheet.Cells[5, 17].Value = Convert.ToInt32(dtth.Compute("SUM(TongTien)", ""));
 
                     worksheet.Column(7).Style.Numberformat.Format = "#,##0";
                     worksheet.Column(9).Style.Numberformat.Format = "#,##0";

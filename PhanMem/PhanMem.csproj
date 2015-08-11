@@ -66,11 +66,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BcTongHopCat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BcTongHopCat.Designer.cs">
+      <DependentUpon>BcTongHopCat.cs</DependentUpon>
+    </Compile>
     <Compile Include="BcCongCat.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="BcCongCat.Designer.cs">
       <DependentUpon>BcCongCat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BcLuongCat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BcLuongCat.Designer.cs">
+      <DependentUpon>BcLuongCat.cs</DependentUpon>
     </Compile>
     <Compile Include="DataAccess.cs" />
     <Compile Include="FormMain.cs">
@@ -143,6 +155,12 @@
     </Compile>
     <EmbeddedResource Include="BcCongCat.resx">
       <DependentUpon>BcCongCat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BcLuongCat.resx">
+      <DependentUpon>BcLuongCat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BcTongHopCat.resx">
+      <DependentUpon>BcTongHopCat.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>

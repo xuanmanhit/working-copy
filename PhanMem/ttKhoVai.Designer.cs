@@ -43,9 +43,9 @@
             // 
             // btHuy
             // 
-            this.btHuy.Location = new System.Drawing.Point(190, 174);
+            this.btHuy.Location = new System.Drawing.Point(180, 170);
             this.btHuy.Name = "btHuy";
-            this.btHuy.Size = new System.Drawing.Size(100, 40);
+            this.btHuy.Size = new System.Drawing.Size(80, 36);
             this.btHuy.TabIndex = 6;
             this.btHuy.Text = "Hủy";
             this.btHuy.UseVisualStyleBackColor = true;
@@ -87,9 +87,9 @@
             // 
             // btThem
             // 
-            this.btThem.Location = new System.Drawing.Point(52, 174);
+            this.btThem.Location = new System.Drawing.Point(79, 170);
             this.btThem.Name = "btThem";
-            this.btThem.Size = new System.Drawing.Size(100, 40);
+            this.btThem.Size = new System.Drawing.Size(80, 36);
             this.btThem.TabIndex = 5;
             this.btThem.Text = "Thêm";
             this.btThem.UseVisualStyleBackColor = true;
@@ -139,7 +139,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(346, 226);
+            this.ClientSize = new System.Drawing.Size(346, 218);
             this.ControlBox = false;
             this.Controls.Add(this.cKhoVaiChinh);
             this.Controls.Add(this.cbKhoVaiChinh);

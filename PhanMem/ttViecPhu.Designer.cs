@@ -38,7 +38,7 @@
             // 
             this.btHuy.Location = new System.Drawing.Point(183, 58);
             this.btHuy.Name = "btHuy";
-            this.btHuy.Size = new System.Drawing.Size(100, 40);
+            this.btHuy.Size = new System.Drawing.Size(80, 36);
             this.btHuy.TabIndex = 2;
             this.btHuy.Text = "Hủy";
             this.btHuy.UseVisualStyleBackColor = true;
@@ -62,9 +62,9 @@
             // 
             // btThem
             // 
-            this.btThem.Location = new System.Drawing.Point(53, 58);
+            this.btThem.Location = new System.Drawing.Point(69, 58);
             this.btThem.Name = "btThem";
-            this.btThem.Size = new System.Drawing.Size(100, 40);
+            this.btThem.Size = new System.Drawing.Size(80, 36);
             this.btThem.TabIndex = 1;
             this.btThem.Text = "Thêm";
             this.btThem.UseVisualStyleBackColor = true;

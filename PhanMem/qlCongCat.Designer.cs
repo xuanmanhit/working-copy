@@ -53,7 +53,7 @@
             // 
             this.btBack.Location = new System.Drawing.Point(692, 12);
             this.btBack.Name = "btBack";
-            this.btBack.Size = new System.Drawing.Size(80, 40);
+            this.btBack.Size = new System.Drawing.Size(80, 36);
             this.btBack.TabIndex = 1;
             this.btBack.Text = "Trở lại";
             this.btBack.UseVisualStyleBackColor = true;
@@ -73,7 +73,7 @@
             // 
             this.btThem.Location = new System.Drawing.Point(606, 12);
             this.btThem.Name = "btThem";
-            this.btThem.Size = new System.Drawing.Size(80, 40);
+            this.btThem.Size = new System.Drawing.Size(80, 36);
             this.btThem.TabIndex = 10;
             this.btThem.Text = "Thêm";
             this.btThem.UseVisualStyleBackColor = true;
@@ -231,7 +231,7 @@
             this.Controls.Add(this.btBack);
             this.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.MaximizeBox = false;
             this.Name = "qlCongCat";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

@@ -27,7 +27,7 @@ namespace PhanMem
                 idCongPhu = _id_rowindex.Split('_').GetValue(0).ToString();
                 rowindex = _id_rowindex.Split('_').GetValue(1).ToString();
                 btThem.Text = "Cập nhật";
-                DataTable dt = DA.Load_CongCat(new string[] { idCongPhu });
+                DataTable dt = DA.Load_CongCatPhu(new string[] { idCongPhu });
                 dtpNgayCong.Value = DateTime.ParseExact(dt.Rows[0][1].ToString(), "MM/dd/yyyy", CultureInfo.InvariantCulture); ;
                 cbCongNhan.SelectedValue = dt.Rows[0][2].ToString();
                 cbTenViec.SelectedValue = dt.Rows[0][3].ToString();

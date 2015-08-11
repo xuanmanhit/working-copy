@@ -30,8 +30,6 @@
         {
             this.label4 = new System.Windows.Forms.Label();
             this.gvKhoVai = new System.Windows.Forms.DataGridView();
-            this.btBack = new System.Windows.Forms.Button();
-            this.btThem = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.DataGridViewButtonColumn();
             this.btnDelete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.txtID = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -40,6 +38,8 @@
             this.KVC = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tbcCongViec = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tbcLoaiHinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btBack = new System.Windows.Forms.Button();
+            this.btThem = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.gvKhoVai)).BeginInit();
             this.SuspendLayout();
             // 
@@ -74,26 +74,6 @@
             this.gvKhoVai.Size = new System.Drawing.Size(760, 392);
             this.gvKhoVai.TabIndex = 10;
             this.gvKhoVai.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvKhoVai_CellClick);
-            // 
-            // btBack
-            // 
-            this.btBack.Location = new System.Drawing.Point(692, 12);
-            this.btBack.Name = "btBack";
-            this.btBack.Size = new System.Drawing.Size(80, 40);
-            this.btBack.TabIndex = 0;
-            this.btBack.Text = "Trở lại";
-            this.btBack.UseVisualStyleBackColor = true;
-            this.btBack.Click += new System.EventHandler(this.btBack_Click);
-            // 
-            // btThem
-            // 
-            this.btThem.Location = new System.Drawing.Point(606, 12);
-            this.btThem.Name = "btThem";
-            this.btThem.Size = new System.Drawing.Size(80, 40);
-            this.btThem.TabIndex = 1;
-            this.btThem.Text = "Thêm";
-            this.btThem.UseVisualStyleBackColor = true;
-            this.btThem.Click += new System.EventHandler(this.btThem_Click);
             // 
             // btnSua
             // 
@@ -167,6 +147,26 @@
             this.tbcLoaiHinh.ReadOnly = true;
             this.tbcLoaiHinh.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.tbcLoaiHinh.Width = 110;
+            // 
+            // btBack
+            // 
+            this.btBack.Location = new System.Drawing.Point(692, 12);
+            this.btBack.Name = "btBack";
+            this.btBack.Size = new System.Drawing.Size(80, 36);
+            this.btBack.TabIndex = 0;
+            this.btBack.Text = "Trở lại";
+            this.btBack.UseVisualStyleBackColor = true;
+            this.btBack.Click += new System.EventHandler(this.btBack_Click);
+            // 
+            // btThem
+            // 
+            this.btThem.Location = new System.Drawing.Point(606, 12);
+            this.btThem.Name = "btThem";
+            this.btThem.Size = new System.Drawing.Size(80, 36);
+            this.btThem.TabIndex = 1;
+            this.btThem.Text = "Thêm";
+            this.btThem.UseVisualStyleBackColor = true;
+            this.btThem.Click += new System.EventHandler(this.btThem_Click);
             // 
             // qlKhoVai
             // 
