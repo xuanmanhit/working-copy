@@ -36,7 +36,9 @@
             this.btExport = new System.Windows.Forms.Button();
             this.btXem = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.sfdXuatExcel = new System.Windows.Forms.SaveFileDialog();
             this.gbtChiTiet = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.gtxtIDCongNhan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtSTT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gtxtCongNhan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gtxtPheTH = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -59,6 +61,7 @@
             this.gvLuong.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gvLuong.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.gbtChiTiet,
+            this.gtxtIDCongNhan,
             this.txtSTT,
             this.gtxtCongNhan,
             this.gtxtPheTH,
@@ -151,6 +154,14 @@
             this.gbtChiTiet.Text = "Chi tiết";
             this.gbtChiTiet.UseColumnTextForButtonValue = true;
             this.gbtChiTiet.Width = 60;
+            // 
+            // gtxtIDCongNhan
+            // 
+            this.gtxtIDCongNhan.DataPropertyName = "CongNhan";
+            this.gtxtIDCongNhan.HeaderText = "";
+            this.gtxtIDCongNhan.Name = "gtxtIDCongNhan";
+            this.gtxtIDCongNhan.ReadOnly = true;
+            this.gtxtIDCongNhan.Visible = false;
             // 
             // txtSTT
             // 
@@ -253,7 +264,7 @@
             this.Controls.Add(this.btBack);
             this.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "BcLuongCat";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -275,7 +286,9 @@
         private System.Windows.Forms.Button btExport;
         private System.Windows.Forms.Button btXem;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.SaveFileDialog sfdXuatExcel;
         private System.Windows.Forms.DataGridViewButtonColumn gbtChiTiet;
+        private System.Windows.Forms.DataGridViewTextBoxColumn gtxtIDCongNhan;
         private System.Windows.Forms.DataGridViewTextBoxColumn txtSTT;
         private System.Windows.Forms.DataGridViewTextBoxColumn gtxtCongNhan;
         private System.Windows.Forms.DataGridViewTextBoxColumn gtxtPheTH;

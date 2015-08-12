@@ -249,7 +249,7 @@ namespace PhanMem
         public void Edit_CongCat(string[] param)
         {
             string cmd = "UPDATE tblCongCat SET NgayCat='{0}',CongNhan={1},KhoVai={2},SoKgCat={3},";
-            cmd += "PheTH_CN1={4},PheTH1={5},PheTH_CN2={6},PheTH1={7},";
+            cmd += "PheTH_CN1={4},PheTH1={5},PheTH_CN2={6},PheTH2={7},";
             cmd += "PheSuot_CN1={8},PheSuot1={9},PheSuot_CN2={10},PheSuot2={11},";
             cmd += "PheDC_CN1={12},PheDC1={13},PheDC_CN2={14},PheDC2={15},";
             cmd += "SoLuongSP={16},PhutSP={17},PhutCongNhat={18} WHERE ID={19}";
@@ -354,12 +354,23 @@ namespace PhanMem
         public DataTable LuongCatChiTiet()
         {
             string cmd = "SELECT * FROM vCat_LuongChiTiet";
-            return LoadData(cmd);
+            DataTable tbl = LoadData(cmd);
+            tbl.Columns.Add("STT", typeof(Int32));
+            for (int i = 0; i < tbl.Rows.Count; i++)
+                tbl.Rows[i]["STT"] = i + 1;
+            return tbl;
         }
 
         public DataTable LuongCatTongHop()
         {
             string cmd = "SELECT * FROM vCat_LuongTongHop";
+            return LoadData(cmd);
+        }
+
+        public DataTable ThongtinLuongCatChiTiet()
+        {
+            string cmd = "SELECT cn.HoTen, strftime('%d/%m/%Y', ts.TuNgay) AS TuNgay, strftime('%d/%m/%Y', ts.DenNgay) AS DenNgay";
+            cmd += " FROM tblThamSo ts LEFT JOIN tblCongNhan cn ON ts.CongNhan = cn.ID";
             return LoadData(cmd);
         }
 

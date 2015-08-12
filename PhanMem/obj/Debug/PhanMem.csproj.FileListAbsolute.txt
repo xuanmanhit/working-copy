@@ -103,3 +103,4 @@ E:\Working\Github\working-copy\PhanMem\obj\Debug\PhanMem.ttViecPhu.resources
 E:\Working\Github\working-copy\PhanMem\obj\Debug\PhanMem.csproj.GenerateResource.Cache
 E:\Working\Github\working-copy\PhanMem\obj\Debug\PhanMem.BcLuongCat.resources
 E:\Working\Github\working-copy\PhanMem\obj\Debug\PhanMem.BcTongHopCat.resources
+E:\Working\Github\working-copy\PhanMem\obj\Debug\PhanMem.BcLuongCatChiTiet.resources
