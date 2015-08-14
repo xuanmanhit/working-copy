@@ -65,9 +65,8 @@ namespace PhanMem
 
         private void btBcTongHop_Click(object sender, EventArgs e)
         {
-            ActiveForm.Hide();
             var bc = new BcTongHopCat();
-            bc.Show();
+            bc.ShowDialog();
         }
 
         private void btLuong_Click(object sender, EventArgs e)

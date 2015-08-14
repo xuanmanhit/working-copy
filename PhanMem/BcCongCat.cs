@@ -67,6 +67,7 @@ namespace PhanMem
                         DataTable dtth = DA.TongHopCongCat(DateTimeSQLite(dtpNgayCong.Value));
 
                         ExcelWorksheet worksheet = package.Workbook.Worksheets["Sheet1"];
+                        worksheet.Name = "Chi tiết ngày cắt";
                         int rowCount = dt.Rows.Count;
                         int rowCountTH = dtth.Rows.Count;
                         worksheet.Cells[2, 1].Value = "Ngày: " + dtpNgayCong.Text;
@@ -117,6 +118,31 @@ namespace PhanMem
                         worksheet.Column(15).Style.Numberformat.Format = "#,##0";
                         worksheet.Column(16).Style.Numberformat.Format = "#,##0";
                         worksheet.Column(17).Style.Numberformat.Format = "#,##0";
+
+                        // fill dữ liệu vào sheet xuất nhập tồn
+                        ExcelWorksheet ew = package.Workbook.Worksheets["Sheet2"];
+                        DA.Edit_ThamSo(GetParam());
+                        DataTable dtxnt = DA.TongHopCat();
+                        int xntCount = dtxnt.Rows.Count;
+                        ew.Name = "Xuất Nhập Tồn";
+                        ew.Cells[2, 1].Value = "Ngày: " + dtpNgayCong.Text;
+
+                        for (int i = 0; i < xntCount; i++)
+                        {
+                            ew.Cells[i + 6, 1].Value = Convert.ToInt32(dtxnt.Rows[i]["STT"].ToString());
+                            ew.Cells[i + 6, 2].Value = dtxnt.Rows[i]["KhoVai"].ToString();
+                            ew.Cells[i + 6, 7].Value = double.Parse(dtxnt.Rows[i]["TongKgCat"].ToString());
+                            ew.Cells[i + 6, 8].Value = Convert.ToInt32(dtxnt.Rows[i]["TongOng"].ToString());
+                            ew.Cells[i + 6, 9].Value = Convert.ToInt32(dtxnt.Rows[i]["TongSP"].ToString());
+                        }
+
+                        ew.Cells[5, 7].Value = double.Parse(dtxnt.Compute("SUM(TongKgCat)", "").ToString());
+                        ew.Cells[5, 8].Value = Convert.ToInt32(dtxnt.Compute("SUM(TongOng)", ""));
+                        ew.Cells[5, 9].Value = Convert.ToInt32(dtxnt.Compute("SUM(TongSP)", ""));
+
+                        // format theo phần ngàn
+                        ew.Cells[5, 3, xntCount + 5, 11].Style.Numberformat.Format = "#,##0";
+
                         package.Save();
 
                         File.Move(des, newdes);
@@ -146,6 +172,15 @@ namespace PhanMem
         private string CheckString(int number)
         {
             return number < 10 ? "0" + number.ToString() : number.ToString();
+        }
+
+        private string[] GetParam()
+        {
+            string[] param = new string[3];
+            param[0] = "0";
+            param[1] = DateTimeSQLite(dtpNgayCong.Value);
+            param[2] = "0";
+            return param;
         }
     }
 }

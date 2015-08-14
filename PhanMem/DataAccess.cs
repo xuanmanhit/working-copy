@@ -374,6 +374,16 @@ namespace PhanMem
             return LoadData(cmd);
         }
 
+        public DataTable TongHopCat()
+        {
+            string cmd = "SELECT * FROM vCat_TongHopSP";
+            DataTable tbl = LoadData(cmd);
+            tbl.Columns.Add("STT", typeof(Int32));
+            for (int i = 0; i < tbl.Rows.Count; i++)
+                tbl.Rows[i]["STT"] = i + 1;
+            return tbl;
+        }
+
         #endregion
     }
 }
