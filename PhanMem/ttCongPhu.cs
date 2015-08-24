@@ -40,12 +40,11 @@ namespace PhanMem
         {
             if (btThem.Text == "Cập nhật")
             {
-                int icheck;
-                
-                if (!int.TryParse(txtGioCong.Text.Trim(), out icheck) || icheck <= 0)
-                    MessageBox.Show("Giờ Công phải là số nguyên và lớn hơn 0!");
-                else if (!int.TryParse(txtGiaCong.Text.Trim(), out icheck) || icheck <= 0)
-                    MessageBox.Show("Giá Công phải là số nguyên và lớn hơn 0!");
+                int icheck;                
+                if (!string.IsNullOrEmpty(txtGioCong.Text) && (!int.TryParse(txtGioCong.Text.Trim(), out icheck) || icheck < 0))
+                    MessageBox.Show("Giờ Công phải là số nguyên dương!");
+                else if (!string.IsNullOrEmpty(txtGiaCong.Text) && (!int.TryParse(txtGiaCong.Text.Trim(), out icheck) || icheck < 0))
+                    MessageBox.Show("Giá Công phải là số nguyên dương!");
                 else
                 {
                     DA.Edit_CongCatPhu(GetParam());
@@ -56,10 +55,10 @@ namespace PhanMem
             else
             {
                 int icheck;
-                if (!int.TryParse(txtGioCong.Text.Trim(), out icheck) || icheck <= 0)
-                    MessageBox.Show("Giờ Công phải là số nguyên và lớn hơn 0!");
-                else if (!int.TryParse(txtGiaCong.Text.Trim(), out icheck) || icheck <= 0)
-                    MessageBox.Show("Giá Công phải là số nguyên và lớn hơn 0!");
+                if (!string.IsNullOrEmpty(txtGioCong.Text) && (!int.TryParse(txtGioCong.Text.Trim(), out icheck) || icheck < 0))
+                    MessageBox.Show("Giờ Công phải là số nguyên dương!");
+                else if (!string.IsNullOrEmpty(txtGiaCong.Text) && (!int.TryParse(txtGiaCong.Text.Trim(), out icheck) || icheck < 0))
+                    MessageBox.Show("Giá Công phải là số nguyên dương!");
                 else
                 {
                     DA.Add_CongCatPhu(GetParam());
