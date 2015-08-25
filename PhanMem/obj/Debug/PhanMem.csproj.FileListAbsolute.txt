@@ -104,3 +104,9 @@ E:\Working\Github\working-copy\PhanMem\obj\Debug\PhanMem.csproj.GenerateResource
 E:\Working\Github\working-copy\PhanMem\obj\Debug\PhanMem.BcLuongCat.resources
 E:\Working\Github\working-copy\PhanMem\obj\Debug\PhanMem.BcTongHopCat.resources
 E:\Working\Github\working-copy\PhanMem\obj\Debug\PhanMem.BcLuongCatChiTiet.resources
+E:\Working\Github\working-copy\PhanMem\obj\Debug\PhanMem.qlThoMayIn.resources
+E:\Working\Github\working-copy\PhanMem\obj\Debug\PhanMem.ttThoMayIn.resources
+E:\Working\Github\working-copy\PhanMem\obj\Debug\PhanMem.qlViecMayIn.resources
+E:\Working\Github\working-copy\PhanMem\obj\Debug\PhanMem.ttViecMayIn.resources
+E:\Working\Github\working-copy\PhanMem\obj\Debug\PhanMem.qlKhachHang.resources
+E:\Working\Github\working-copy\PhanMem\obj\Debug\PhanMem.ttKhachHang.resources

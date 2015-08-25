@@ -385,5 +385,131 @@ namespace PhanMem
         }
 
         #endregion
+
+        #region Thợ May - In
+
+        public DataTable List_ThoMayIn()
+        {
+            string cmd = "SELECT * FROM tblThoMayIn WHERE TinhTrang=1 ORDER BY ID DESC";
+            DataTable tbl = LoadData(cmd);
+            tbl.Columns.Add("STT", typeof(Int32));
+            for (int i = 0; i < tbl.Rows.Count; i++)
+                tbl.Rows[i]["STT"] = i + 1;
+            return tbl;
+        }
+
+        public void Add_ThoMayIn(string[] param)
+        {
+            string cmd = "INSERT INTO tblThoMayIn (HoTen,SoTho) VALUES ('{0}',{1})";
+            cmd = String.Format(cmd, param);
+            ExecuteQuery(cmd);
+        }
+
+        public void Edit_ThoMayIn(string[] param)
+        {
+            string cmd = "UPDATE tblThoMayIn SET HoTen='{0}',SoTho={1} WHERE ID={2}";
+            cmd = String.Format(cmd, param);
+            ExecuteQuery(cmd);
+        }
+
+        public void Del_ThoMayIn(string[] param)
+        {
+            string cmd = "UPDATE tblThoMayIn SET TinhTrang=0 WHERE ID={0}";
+            cmd = String.Format(cmd, param);
+            ExecuteQuery(cmd);
+        }
+
+        public DataTable Load_ThoMayIn(string[] param)
+        {
+            string cmd = "SELECT * FROM tblThoMayIn WHERE ID={0}";
+            cmd = String.Format(cmd, param);
+            return LoadData(cmd);
+        }
+
+        #endregion
+
+        #region Công việc May - In
+
+        public DataTable List_ViecMayIn()
+        {
+            string cmd = "SELECT * FROM tblCongViec WHERE TinhTrang=1 ORDER BY ID DESC";
+            DataTable tbl = LoadData(cmd);
+            tbl.Columns.Add("STT", typeof(Int32));
+            for (int i = 0; i < tbl.Rows.Count; i++)
+                tbl.Rows[i]["STT"] = i + 1;
+            return tbl;
+        }
+
+        public void Add_ViecMayIn(string[] param)
+        {
+            string cmd = "INSERT INTO tblCongViec (TenCongViec,DonGia) VALUES ('{0}',{1})";
+            cmd = String.Format(cmd, param);
+            ExecuteQuery(cmd);
+        }
+
+        public void Edit_ViecMayIn(string[] param)
+        {
+            string cmd = "UPDATE tblCongViec SET TenCongViec='{0}',DonGia={1} WHERE ID={2}";
+            cmd = String.Format(cmd, param);
+            ExecuteQuery(cmd);
+        }
+
+        public void Del_ViecMayIn(string[] param)
+        {
+            string cmd = "UPDATE tblCongViec SET TinhTrang=0 WHERE ID={0}";
+            cmd = String.Format(cmd, param);
+            ExecuteQuery(cmd);
+        }
+
+        public DataTable Load_ViecMayIn(string[] param)
+        {
+            string cmd = "SELECT * FROM tblCongViec WHERE ID={0}";
+            cmd = String.Format(cmd, param);
+            return LoadData(cmd);
+        }
+
+        #endregion
+
+        #region Khách hàng
+
+        public DataTable List_KhachHang()
+        {
+            string cmd = "SELECT * FROM tblKhachHang WHERE TinhTrang=1 ORDER BY ID DESC";
+            DataTable tbl = LoadData(cmd);
+            tbl.Columns.Add("STT", typeof(Int32));
+            for (int i = 0; i < tbl.Rows.Count; i++)
+                tbl.Rows[i]["STT"] = i + 1;
+            return tbl;
+        }
+
+        public void Add_KhachHang(string[] param)
+        {
+            string cmd = "INSERT INTO tblKhachHang (HoTen) VALUES ('{0}')";
+            cmd = String.Format(cmd, param);
+            ExecuteQuery(cmd);
+        }
+
+        public void Edit_KhachHang(string[] param)
+        {
+            string cmd = "UPDATE tblKhachHang SET HoTen='{0}' WHERE ID={1}";
+            cmd = String.Format(cmd, param);
+            ExecuteQuery(cmd);
+        }
+
+        public void Del_KhachHang(string[] param)
+        {
+            string cmd = "UPDATE tblKhachHang SET TinhTrang=0 WHERE ID={0}";
+            cmd = String.Format(cmd, param);
+            ExecuteQuery(cmd);
+        }
+
+        public DataTable Load_KhachHangn(string[] param)
+        {
+            string cmd = "SELECT * FROM tblKhachHang WHERE ID={0}";
+            cmd = String.Format(cmd, param);
+            return LoadData(cmd);
+        }
+
+        #endregion
     }
 }

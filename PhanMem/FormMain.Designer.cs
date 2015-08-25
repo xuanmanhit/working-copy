@@ -34,13 +34,23 @@
             this.bt_qlCongNhan = new System.Windows.Forms.Button();
             this.btExit = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btLuong = new System.Windows.Forms.Button();
             this.btBcTongHop = new System.Windows.Forms.Button();
             this.btBcNgay = new System.Windows.Forms.Button();
             this.btCongPhu = new System.Windows.Forms.Button();
             this.btNhapCat = new System.Windows.Forms.Button();
-            this.btLuong = new System.Windows.Forms.Button();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.bt_qlCongN2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.bt_qlCongPhu = new System.Windows.Forms.Button();
+            this.bt_qlCongN1 = new System.Windows.Forms.Button();
+            this.bt_qlKH = new System.Windows.Forms.Button();
+            this.bt_qlCongViec = new System.Windows.Forms.Button();
+            this.bt_qlTho = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -119,6 +129,17 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Quản lý thông tin Cắt";
             // 
+            // btLuong
+            // 
+            this.btLuong.Location = new System.Drawing.Point(19, 206);
+            this.btLuong.Margin = new System.Windows.Forms.Padding(5);
+            this.btLuong.Name = "btLuong";
+            this.btLuong.Size = new System.Drawing.Size(150, 50);
+            this.btLuong.TabIndex = 4;
+            this.btLuong.Text = "Tổng hợp Lương";
+            this.btLuong.UseVisualStyleBackColor = true;
+            this.btLuong.Click += new System.EventHandler(this.btLuong_Click);
+            // 
             // btBcTongHop
             // 
             this.btBcTongHop.Location = new System.Drawing.Point(19, 266);
@@ -163,16 +184,111 @@
             this.btNhapCat.UseVisualStyleBackColor = true;
             this.btNhapCat.Click += new System.EventHandler(this.btNhapCat_Click);
             // 
-            // btLuong
+            // groupBox3
             // 
-            this.btLuong.Location = new System.Drawing.Point(19, 206);
-            this.btLuong.Margin = new System.Windows.Forms.Padding(5);
-            this.btLuong.Name = "btLuong";
-            this.btLuong.Size = new System.Drawing.Size(150, 50);
-            this.btLuong.TabIndex = 4;
-            this.btLuong.Text = "Tổng hợp Lương";
-            this.btLuong.UseVisualStyleBackColor = true;
-            this.btLuong.Click += new System.EventHandler(this.btLuong_Click);
+            this.groupBox3.Controls.Add(this.bt_qlTho);
+            this.groupBox3.Controls.Add(this.bt_qlCongViec);
+            this.groupBox3.Controls.Add(this.bt_qlKH);
+            this.groupBox3.Controls.Add(this.bt_qlCongN2);
+            this.groupBox3.Controls.Add(this.button1);
+            this.groupBox3.Controls.Add(this.button3);
+            this.groupBox3.Controls.Add(this.bt_qlCongPhu);
+            this.groupBox3.Controls.Add(this.bt_qlCongN1);
+            this.groupBox3.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox3.Location = new System.Drawing.Point(395, 16);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(5);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(5);
+            this.groupBox3.Size = new System.Drawing.Size(347, 372);
+            this.groupBox3.TabIndex = 5;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Quản lý thông tin May - In";
+            // 
+            // bt_qlCongN2
+            // 
+            this.bt_qlCongN2.Location = new System.Drawing.Point(179, 86);
+            this.bt_qlCongN2.Margin = new System.Windows.Forms.Padding(5);
+            this.bt_qlCongN2.Name = "bt_qlCongN2";
+            this.bt_qlCongN2.Size = new System.Drawing.Size(150, 50);
+            this.bt_qlCongN2.TabIndex = 5;
+            this.bt_qlCongN2.Text = "Quản lý Công Nhóm 2";
+            this.bt_qlCongN2.UseVisualStyleBackColor = true;
+            this.bt_qlCongN2.Click += new System.EventHandler(this.bt_qlCongN2_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(19, 266);
+            this.button1.Margin = new System.Windows.Forms.Padding(5);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(150, 50);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "Tổng hợp Lương";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(19, 206);
+            this.button3.Margin = new System.Windows.Forms.Padding(5);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(150, 50);
+            this.button3.TabIndex = 2;
+            this.button3.Text = "Báo cáo Ngày";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // bt_qlCongPhu
+            // 
+            this.bt_qlCongPhu.Location = new System.Drawing.Point(179, 146);
+            this.bt_qlCongPhu.Margin = new System.Windows.Forms.Padding(5);
+            this.bt_qlCongPhu.Name = "bt_qlCongPhu";
+            this.bt_qlCongPhu.Size = new System.Drawing.Size(150, 50);
+            this.bt_qlCongPhu.TabIndex = 1;
+            this.bt_qlCongPhu.Text = "Quản lý Công Phụ";
+            this.bt_qlCongPhu.UseVisualStyleBackColor = true;
+            this.bt_qlCongPhu.Click += new System.EventHandler(this.bt_qlCongPhu_Click);
+            // 
+            // bt_qlCongN1
+            // 
+            this.bt_qlCongN1.Location = new System.Drawing.Point(179, 26);
+            this.bt_qlCongN1.Margin = new System.Windows.Forms.Padding(5);
+            this.bt_qlCongN1.Name = "bt_qlCongN1";
+            this.bt_qlCongN1.Size = new System.Drawing.Size(150, 50);
+            this.bt_qlCongN1.TabIndex = 0;
+            this.bt_qlCongN1.Text = "Quản lý Công Nhóm 1";
+            this.bt_qlCongN1.UseVisualStyleBackColor = true;
+            this.bt_qlCongN1.Click += new System.EventHandler(this.bt_qlCongN1_Click);
+            // 
+            // bt_qlKH
+            // 
+            this.bt_qlKH.Location = new System.Drawing.Point(19, 146);
+            this.bt_qlKH.Margin = new System.Windows.Forms.Padding(5);
+            this.bt_qlKH.Name = "bt_qlKH";
+            this.bt_qlKH.Size = new System.Drawing.Size(150, 50);
+            this.bt_qlKH.TabIndex = 4;
+            this.bt_qlKH.Text = "Quản lý Khách Hàng";
+            this.bt_qlKH.UseVisualStyleBackColor = true;
+            this.bt_qlKH.Click += new System.EventHandler(this.bt_qlKH_Click);
+            // 
+            // bt_qlCongViec
+            // 
+            this.bt_qlCongViec.Location = new System.Drawing.Point(19, 86);
+            this.bt_qlCongViec.Margin = new System.Windows.Forms.Padding(5);
+            this.bt_qlCongViec.Name = "bt_qlCongViec";
+            this.bt_qlCongViec.Size = new System.Drawing.Size(150, 50);
+            this.bt_qlCongViec.TabIndex = 6;
+            this.bt_qlCongViec.Text = "Quản lý Công Việc";
+            this.bt_qlCongViec.UseVisualStyleBackColor = true;
+            this.bt_qlCongViec.Click += new System.EventHandler(this.bt_qlCongViec_Click);
+            // 
+            // bt_qlTho
+            // 
+            this.bt_qlTho.Location = new System.Drawing.Point(19, 26);
+            this.bt_qlTho.Margin = new System.Windows.Forms.Padding(5);
+            this.bt_qlTho.Name = "bt_qlTho";
+            this.bt_qlTho.Size = new System.Drawing.Size(150, 50);
+            this.bt_qlTho.TabIndex = 4;
+            this.bt_qlTho.Text = "Quản lý Thợ";
+            this.bt_qlTho.UseVisualStyleBackColor = true;
+            this.bt_qlTho.Click += new System.EventHandler(this.bt_qlTho_Click);
             // 
             // FormMain
             // 
@@ -180,6 +296,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 462);
             this.ControlBox = false;
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.btExit);
             this.Controls.Add(this.groupBox1);
@@ -192,6 +309,7 @@
             this.Text = "Phần mềm quản lý v1.0";
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -209,6 +327,15 @@
         private System.Windows.Forms.Button btBcNgay;
         private System.Windows.Forms.Button btBcTongHop;
         private System.Windows.Forms.Button btLuong;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button bt_qlCongPhu;
+        private System.Windows.Forms.Button bt_qlCongN1;
+        private System.Windows.Forms.Button bt_qlCongN2;
+        private System.Windows.Forms.Button bt_qlKH;
+        private System.Windows.Forms.Button bt_qlTho;
+        private System.Windows.Forms.Button bt_qlCongViec;
     }
 }
 

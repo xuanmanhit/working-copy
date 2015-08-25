@@ -75,5 +75,41 @@ namespace PhanMem
             var bc = new BcLuongCat();
             bc.Show();
         }
+
+        private void bt_qlTho_Click(object sender, EventArgs e)
+        {
+            ActiveForm.Hide();
+            var bc = new qlThoMayIn();
+            bc.Show();
+        }
+
+        private void bt_qlCongViec_Click(object sender, EventArgs e)
+        {
+            ActiveForm.Hide();
+            var bc = new qlViecMayIn();
+            bc.Show();
+        }
+
+        private void bt_qlKH_Click(object sender, EventArgs e)
+        {
+            ActiveForm.Hide();
+            var bc = new qlKhachHang();
+            bc.Show();
+        }
+
+        private void bt_qlCongN1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bt_qlCongN2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bt_qlCongPhu_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
