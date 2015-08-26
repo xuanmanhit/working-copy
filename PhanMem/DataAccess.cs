@@ -511,5 +511,73 @@ namespace PhanMem
         }
 
         #endregion
+
+        #region Công May In N1
+
+        public DataTable List_Tho()
+        {
+            string cmd = "SELECT ID,HoTen FROM tblThoMayIn WHERE TinhTrang=1 ORDER BY HoTen";
+            return LoadData(cmd);
+        }
+
+        public DataTable List_CongviecMayIn()
+        {
+            string cmd = "SELECT ID,TenCongViec FROM tblCongViec WHERE TinhTrang=1 ORDER BY TenCongViec";
+            return LoadData(cmd);
+        }
+
+        public DataTable List_KhoVaiMayIn()
+        {
+            string cmd = "SELECT ID,KhoVai FROM tblKhoVai WHERE TinhTrang=1 ORDER BY KhoVai";
+            return LoadData(cmd);
+        }
+
+        public DataTable List_KhgMayIn()
+        {
+            string cmd = "SELECT ID,HoTen FROM tblKhachHang WHERE TinhTrang=1 ORDER BY HoTen";
+            return LoadData(cmd);
+        }
+
+        public DataTable List_CongN1()
+        {
+            string cmd = "SELECT * FROM vN1_DsHienThi";
+            DataTable tbl = LoadData(cmd);
+            tbl.Columns.Add("STT", typeof(Int32));
+            for (int i = 0; i < tbl.Rows.Count; i++)
+                tbl.Rows[i]["STT"] = i + 1;
+            return tbl;
+        }
+
+        public void Add_CongN1(string[] param)
+        {
+            string cmd = "INSERT INTO tblCongNhom1 (NgayCong,ThoMayIn,CongViec,KhoVai,KhachHang,SoLuong,GhiChu)";
+            cmd += " VALUES ('{0}',{1},{2},{3},{4},{5},'{6}')";
+            cmd = String.Format(cmd, param);
+            ExecuteQuery(cmd);
+        }
+
+        public void Edit_CongN1(string[] param)
+        {
+            string cmd = "UPDATE tblCongNhom1 SET NgayCong='{0}',ThoMayIn={1},CongViec={2},KhoVai={3},";
+            cmd += "KhachHang={4},SoLuong={5},GhiChu='{6}' WHERE ID={7}";
+            cmd = String.Format(cmd, param);
+            ExecuteQuery(cmd);
+        }
+
+        public void Del_CongN1(string[] param)
+        {
+            string cmd = "UPDATE tblCongNhom1 SET TinhTrang=0 WHERE ID={0}";
+            cmd = String.Format(cmd, param);
+            ExecuteQuery(cmd);
+        }
+
+        public DataTable Load_CongN1(string[] param)
+        {
+            string cmd = "SELECT * FROM vN1_DsCapNhat WHERE ID={0}";
+            cmd = String.Format(cmd, param);
+            return LoadData(cmd);
+        }
+
+        #endregion
     }
 }
