@@ -291,6 +291,9 @@
     <EmbeddedResource Include="ttCongMayInN1.resx">
       <DependentUpon>ttCongMayInN1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ttCongMayInN2.resx">
+      <DependentUpon>ttCongMayInN2.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ttCongNhan.resx">
       <DependentUpon>ttCongNhan.cs</DependentUpon>
     </EmbeddedResource>

@@ -106,7 +106,9 @@ namespace PhanMem
 
         private void bt_qlCongN2_Click(object sender, EventArgs e)
         {
-
+            ActiveForm.Hide();
+            var bc = new qlCongMayInN2();
+            bc.Show();
         }
 
         private void bt_qlCongPhu_Click(object sender, EventArgs e)

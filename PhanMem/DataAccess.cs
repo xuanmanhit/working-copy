@@ -579,5 +579,52 @@ namespace PhanMem
         }
 
         #endregion
+
+        #region Công May In N1
+
+        public DataTable List_CongN2()
+        {
+            string cmd = "SELECT * FROM vN2_DsHienThi";
+            DataTable tbl = LoadData(cmd);
+            tbl.Columns.Add("STT", typeof(Int32));
+            for (int i = 0; i < tbl.Rows.Count; i++)
+                tbl.Rows[i]["STT"] = i + 1;
+            return tbl;
+        }
+
+        public void Add_CongN2(string[] param)
+        {
+            string cmd = "INSERT INTO tblCongNhom2 (NgayCong,MayIn,ThoChinh,ThoPhu,GioNhanIn,GioBatDauIn,GioInXong,";
+            cmd += "KhoVai,CongViec,ThoCat,SoLuong,InHu,ThoInHu,InPhe,ThoInPhe,InVayMuc,ThoInVayMuc,InLoi,ThoInLoi,GhiChu)";
+            cmd += " VALUES ('{0}',{1},{2},{3},'{4}','{5}','{6}',{7},{8},{9},{10},{11},{12},{13},{14},{15},{16},{17},{18},'{19}')";
+            cmd = String.Format(cmd, param);
+            ExecuteQuery(cmd);
+        }
+
+        public void Edit_CongN2(string[] param)
+        {
+            string cmd = "UPDATE tblCongNhom2 SET NgayCong='{0}',MayIn={1},ThoChinh={2},ThoPhu={3},";
+            cmd += "GioNhanIn='{4}',GioBatDauIn='{5}',GioInXong='{6}',KhoVai={7},CongViec={8},ThoCat={9},SoLuong={10},";
+            cmd += "InHu={11},ThoInHu={12},InPhe={13},ThoInPhe={14},InVayMuc={15},ThoInVayMuc={16},InLoi={17},ThoInLoi={18},";
+            cmd += "GhiChu='{19}' WHERE ID={20}";
+            cmd = String.Format(cmd, param);
+            ExecuteQuery(cmd);
+        }
+
+        public void Del_CongN2(string[] param)
+        {
+            string cmd = "UPDATE tblCongNhom2 SET TinhTrang=0 WHERE ID={0}";
+            cmd = String.Format(cmd, param);
+            ExecuteQuery(cmd);
+        }
+
+        public DataTable Load_CongN2(string[] param)
+        {
+            string cmd = "SELECT * FROM vN2_DsCapNhat WHERE ID={0}";
+            cmd = String.Format(cmd, param);
+            return LoadData(cmd);
+        }
+
+        #endregion
     }
 }
