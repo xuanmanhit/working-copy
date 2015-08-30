@@ -115,3 +115,8 @@ E:\Working\Github\working-copy\PhanMem\obj\Debug\PhanMem.qlCongMayInN2.resources
 E:\Working\Github\working-copy\PhanMem\obj\Debug\PhanMem.qlCongMayInN3.resources
 E:\Working\Github\working-copy\PhanMem\obj\Debug\PhanMem.ttCongMayInN1.resources
 E:\Working\Github\working-copy\PhanMem\obj\Debug\PhanMem.ttCongMayInN2.resources
+E:\Working\Github\working-copy\PhanMem\obj\Debug\PhanMem.qlMayIn.resources
+E:\Working\Github\working-copy\PhanMem\obj\Debug\PhanMem.ttMayIn.resources
+E:\Working\Github\working-copy\PhanMem\obj\Debug\PhanMem.ttCongMayInN3.resources
+E:\Working\Github\working-copy\PhanMem\obj\Debug\PhanMem.bcLuongN1.resources
+E:\Working\Github\working-copy\PhanMem\obj\Debug\PhanMem.bcMayIn.resources

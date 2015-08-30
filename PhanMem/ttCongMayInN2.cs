@@ -31,9 +31,9 @@ namespace PhanMem
                 dtpNgayCong.Value = DateTime.ParseExact(dt.Rows[0][1].ToString(), "MM/dd/yyyy", CultureInfo.InvariantCulture);
                 cbThochinh.SelectedValue = dt.Rows[0][2].ToString();
                 cbThophu.SelectedValue = dt.Rows[0][3].ToString();
-                dtpNhanIn.Value = DateTime.ParseExact(dt.Rows[0][4].ToString(), "MM/dd/yyyy", CultureInfo.InvariantCulture);
-                dtpIn.Value = DateTime.ParseExact(dt.Rows[0][5].ToString(), "MM/dd/yyyy", CultureInfo.InvariantCulture);
-                dtpInxong.Value = DateTime.ParseExact(dt.Rows[0][6].ToString(), "MM/dd/yyyy", CultureInfo.InvariantCulture);
+                dtpNhanIn.Value = DateTime.ParseExact(dt.Rows[0][4].ToString(), "HH:mm", CultureInfo.InvariantCulture);
+                dtpIn.Value = DateTime.ParseExact(dt.Rows[0][5].ToString(), "HH:mm", CultureInfo.InvariantCulture);
+                dtpInxong.Value = DateTime.ParseExact(dt.Rows[0][6].ToString(), "HH:mm", CultureInfo.InvariantCulture);
                 cbKhoVai.SelectedValue = dt.Rows[0][7].ToString();
                 cbCongviec.SelectedValue = dt.Rows[0][8].ToString();
                 cbThocat.SelectedValue = dt.Rows[0][9].ToString();
@@ -57,7 +57,15 @@ namespace PhanMem
             {
                 int icheck;
                 if (!string.IsNullOrEmpty(txtSoSp.Text) && (!int.TryParse(txtSoSp.Text.Trim(), out icheck) || icheck < 0))
-                    MessageBox.Show("Số lượng SP phải là số nguyên!");
+                    MessageBox.Show("Số lượng phải là số nguyên!");
+                else if (!string.IsNullOrEmpty(txtInHu.Text) && (!int.TryParse(txtInHu.Text.Trim(), out icheck) || icheck < 0))
+                    MessageBox.Show("Số in hư phải là số nguyên!");
+                else if (!string.IsNullOrEmpty(txtInPhe.Text) && (!int.TryParse(txtInPhe.Text.Trim(), out icheck) || icheck < 0))
+                    MessageBox.Show("Số in phế phải là số nguyên!");
+                else if (!string.IsNullOrEmpty(txtInVayMuc.Text) && (!int.TryParse(txtInVayMuc.Text.Trim(), out icheck) || icheck < 0))
+                    MessageBox.Show("Số in vấy mực phải là số nguyên!");
+                else if (!string.IsNullOrEmpty(txtInLoi.Text) && (!int.TryParse(txtInLoi.Text.Trim(), out icheck) || icheck < 0))
+                    MessageBox.Show("Số in lỗi phải là số nguyên!");
                 else
                 {
                     DA.Edit_CongN2(GetParam());
@@ -69,7 +77,15 @@ namespace PhanMem
             {
                 int icheck;
                 if (!string.IsNullOrEmpty(txtSoSp.Text) && (!int.TryParse(txtSoSp.Text.Trim(), out icheck) || icheck < 0))
-                    MessageBox.Show("Số lượng SP phải là số nguyên!");
+                    MessageBox.Show("Số lượng phải là số nguyên!");
+                else if (!string.IsNullOrEmpty(txtInHu.Text) && (!int.TryParse(txtInHu.Text.Trim(), out icheck) || icheck < 0))
+                    MessageBox.Show("Số in hư phải là số nguyên!");
+                else if (!string.IsNullOrEmpty(txtInPhe.Text) && (!int.TryParse(txtInPhe.Text.Trim(), out icheck) || icheck < 0))
+                    MessageBox.Show("Số in phế phải là số nguyên!");
+                else if (!string.IsNullOrEmpty(txtInVayMuc.Text) && (!int.TryParse(txtInVayMuc.Text.Trim(), out icheck) || icheck < 0))
+                    MessageBox.Show("Số in vấy mực phải là số nguyên!");
+                else if (!string.IsNullOrEmpty(txtInLoi.Text) && (!int.TryParse(txtInLoi.Text.Trim(), out icheck) || icheck < 0))
+                    MessageBox.Show("Số in lỗi phải là số nguyên!");
                 else
                 {
                     DA.Add_CongN2(GetParam());
@@ -88,7 +104,11 @@ namespace PhanMem
         {
             dtpNgayCong.Format = DateTimePickerFormat.Custom;
             dtpNgayCong.CustomFormat = "dd/MM/yyyy";
-            
+
+            cbSoMayIn.DataSource = DA.List_DsMayIn();
+            cbSoMayIn.ValueMember = "ID";
+            cbSoMayIn.DisplayMember = "MayIn";
+
             cbThochinh.DataSource = DA.List_Tho();
             cbThochinh.ValueMember = "ID";
             cbThochinh.DisplayMember = "HoTen";
@@ -116,6 +136,27 @@ namespace PhanMem
             cbThocat.DisplayMember = "HoTen";
 
             txtSoSp.Text = string.Empty;
+
+            txtInHu.Text = string.Empty;
+            cbThoinHu.DataSource = DA.List_Tho();
+            cbThoinHu.ValueMember = "ID";
+            cbThoinHu.DisplayMember = "HoTen";
+
+            txtInPhe.Text = string.Empty;
+            cbThoInPhe.DataSource = DA.List_Tho();
+            cbThoInPhe.ValueMember = "ID";
+            cbThoInPhe.DisplayMember = "HoTen";
+
+            txtInVayMuc.Text = string.Empty;
+            cbThoInVayMuc.DataSource = DA.List_Tho();
+            cbThoInVayMuc.ValueMember = "ID";
+            cbThoInVayMuc.DisplayMember = "HoTen";
+
+            txtInLoi.Text = string.Empty;
+            cbThoInLoi.DataSource = DA.List_Tho();
+            cbThoInLoi.ValueMember = "ID";
+            cbThoInLoi.DisplayMember = "HoTen";
+
             txtGhichu.Text = string.Empty;
         }
 
@@ -125,6 +166,12 @@ namespace PhanMem
             return string.Format(dateTimeFormat, datetime.Year, CheckString(datetime.Month), CheckString(datetime.Day));
         }
 
+        private string timeSQLite(DateTime datetime)
+        {
+            string timeFormat = "{0}:{1}";
+            return string.Format(timeFormat, CheckString(datetime.Hour), CheckString(datetime.Minute));
+        }
+
         private string[] GetParam()
         {
             string[] param = new string[21];
@@ -132,21 +179,21 @@ namespace PhanMem
             param[1] = cbSoMayIn.SelectedValue.ToString();
             param[2] = cbThochinh.SelectedValue.ToString();
             param[3] = cbThophu.SelectedValue.ToString();
-            param[4] = DateTimeSQLite(dtpNhanIn.Value);
-            param[5] = DateTimeSQLite(dtpIn.Value);
-            param[6] = DateTimeSQLite(dtpInxong.Value);
+            param[4] = timeSQLite(dtpNhanIn.Value);
+            param[5] = timeSQLite(dtpIn.Value);
+            param[6] = timeSQLite(dtpInxong.Value);
             param[7] = cbKhoVai.SelectedValue.ToString();
             param[8] = cbCongviec.SelectedValue.ToString();
             param[9] = cbThocat.SelectedValue.ToString();
-            param[10] = txtSoSp.Text.Trim();
-            param[11] = txtInHu.Text.Trim();
-            param[12] = cbThoinHu.SelectedValue.ToString();
-            param[13] = txtInPhe.Text.Trim();
-            param[14] = cbThoInPhe.SelectedValue.ToString();
-            param[15] = txtInVayMuc.Text.Trim();
-            param[16] = cbThoInVayMuc.SelectedValue.ToString();
-            param[17] = txtInLoi.Text.Trim();
-            param[18] = cbThoInLoi.SelectedValue.ToString();
+            param[10] = string.IsNullOrEmpty(txtSoSp.Text) ? "0" : txtSoSp.Text.Trim();
+            param[11] = string.IsNullOrEmpty(txtInHu.Text) ? "0" : txtInHu.Text.Trim();
+            param[12] = string.IsNullOrEmpty(txtInHu.Text) || txtInHu.Text == "0" ? "0" : cbThoinHu.SelectedValue.ToString();
+            param[13] = string.IsNullOrEmpty(txtInPhe.Text) ? "0" : txtInPhe.Text.Trim();
+            param[14] = string.IsNullOrEmpty(txtInPhe.Text) || txtInPhe.Text == "0" ? "0" : cbThoInPhe.SelectedValue.ToString();
+            param[15] = string.IsNullOrEmpty(txtInVayMuc.Text) ? "0" : txtInVayMuc.Text.Trim();
+            param[16] = string.IsNullOrEmpty(txtInVayMuc.Text) || txtInVayMuc.Text == "0" ? "0" : cbThoInVayMuc.SelectedValue.ToString();
+            param[17] = string.IsNullOrEmpty(txtInLoi.Text) ? "0" : txtInLoi.Text.Trim();
+            param[18] = string.IsNullOrEmpty(txtInLoi.Text) || txtInLoi.Text == "0" ? "0" : cbThoInLoi.SelectedValue.ToString();
             param[19] = txtGhichu.Text.Trim();            
             param[20] = idN2;
             return param;

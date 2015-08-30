@@ -98,7 +98,7 @@ namespace PhanMem
 
         private string[] GetParam()
         {
-            string[] param = new string[11];
+            string[] param = new string[6];
             param[0] = DateTimeSQLite(dtpNgayCong.Value);
             param[1] = cbCongNhan.SelectedValue.ToString();
             param[2] = cbTenViec.SelectedValue.ToString();
