@@ -735,6 +735,26 @@ namespace PhanMem
             return tbl;
         }
 
+        public DataTable MayIn_LuongCTThoN1()
+        {
+            string cmd = "SELECT * FROM vN1_BcLuongThoCT";
+            DataTable tbl = LoadData(cmd);
+            tbl.Columns.Add("STT", typeof(Int32));
+            for (int i = 0; i < tbl.Rows.Count; i++)
+                tbl.Rows[i]["STT"] = i + 1;
+            return tbl;
+        }
+
+        public DataTable MayIn_LuongTHThoN1()
+        {
+            string cmd = "SELECT * FROM vN1_BcLuongThoTH";
+            DataTable tbl = LoadData(cmd);
+            tbl.Columns.Add("STT", typeof(Int32));
+            for (int i = 0; i < tbl.Rows.Count; i++)
+                tbl.Rows[i]["STT"] = i + 1;
+            return tbl;
+        }
+
         #endregion
     }
 }
