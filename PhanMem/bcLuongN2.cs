@@ -11,51 +11,15 @@ using System.Windows.Forms;
 
 namespace PhanMem
 {
-    public partial class bcLuongN1 : Form
+    public partial class bcLuongN2 : Form
     {
         DataAccess DA = new DataAccess();
         static string idTho = "0";
 
-        public bcLuongN1()
+        public bcLuongN2()
         {
             InitializeComponent();
             SetDefault();
-        }
-
-        private void btHuy_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void SetDefault()
-        {
-            dtpTuNgay.Value = DateTime.Today;
-            dtpTuNgay.Format = DateTimePickerFormat.Custom;
-            dtpTuNgay.CustomFormat = "dd/MM/yyyy";
-
-            dtpDenNgay.Value = DateTime.Today;
-            dtpDenNgay.Format = DateTimePickerFormat.Custom;
-            dtpDenNgay.CustomFormat = "dd/MM/yyyy";
-        }
-
-        private string DateTimeSQLite(DateTime datetime)
-        {
-            string dateTimeFormat = "{0}-{1}-{2}";
-            return string.Format(dateTimeFormat, datetime.Year, CheckString(datetime.Month), CheckString(datetime.Day));
-        }
-
-        private string CheckString(int number)
-        {
-            return number < 10 ? "0" + number.ToString() : number.ToString();
-        }
-
-        private string[] GetParam()
-        {
-            string[] param = new string[3];
-            param[0] = DateTimeSQLite(dtpTuNgay.Value);
-            param[1] = DateTimeSQLite(dtpDenNgay.Value);
-            param[2] = idTho;
-            return param;
         }
 
         private void btExport_Click(object sender, EventArgs e)
@@ -68,14 +32,14 @@ namespace PhanMem
                 {
                     idTho = "0";
                     DA.Edit_ThamSo(GetParam());
-                    sfdXuatExcel.FileName = "MayIn-LuongN1-" + DateTimeSQLite(dtpTuNgay.Value) + "-" + DateTimeSQLite(dtpDenNgay.Value) + ".xlsx";
+                    sfdXuatExcel.FileName = "MayIn-LuongN2-" + DateTimeSQLite(dtpTuNgay.Value) + "-" + DateTimeSQLite(dtpDenNgay.Value) + ".xlsx";
                     sfdXuatExcel.Filter = "Excel File|*.xlsx";
                     if (sfdXuatExcel.ShowDialog() == DialogResult.OK)
                     {
                         if (File.Exists(sfdXuatExcel.FileName))
                             File.Delete(sfdXuatExcel.FileName);
-                        string source = DA.SourceFile() + @"Data\MayIn-LuongN1.xlsx";
-                        string des = @"D:\MayIn-LuongN1.xlsx";
+                        string source = DA.SourceFile() + @"Data\MayIn-LuongN2.xlsx";
+                        string des = @"D:\MayIn-LuongN2.xlsx";
                         if (File.Exists(des))
                             File.Delete(des);
                         string newdes = sfdXuatExcel.FileName;
@@ -83,7 +47,7 @@ namespace PhanMem
 
                         using (ExcelPackage package = new ExcelPackage(new FileInfo(des)))
                         {
-                            DataTable dt = DA.MayIn_LuongN1();
+                            DataTable dt = DA.MayIn_LuongN2();
                             ExcelWorksheet worksheet = package.Workbook.Worksheets["Sheet1"];
                             int rowCount = dt.Rows.Count;
                             worksheet.Name = "Tổng hợp";
@@ -109,8 +73,8 @@ namespace PhanMem
                             {
                                 idTho = dt.Rows[i]["ID"].ToString();
                                 DA.Edit_ThamSo(GetParam());
-                                DataTable dtct = DA.MayIn_LuongCTThoN1();
-                                DataTable dtth = DA.MayIn_LuongTHThoN1();
+                                DataTable dtct = DA.MayIn_LuongCTThoN2();
+                                DataTable dtth = DA.MayIn_LuongTHThoN2();
                                 int rownum = dtct.Rows.Count;
                                 int rownum2 = dtth.Rows.Count;
                                 string sheetname = "Chi tiết lương " + dt.Rows[i]["HoTen"].ToString();
@@ -159,6 +123,42 @@ namespace PhanMem
                     MessageBox.Show("Quá trình xuất excel có lỗi, nếu bạn đang mở file excel, hãy đóng nó lại!" + ex.Message);
                 }
             }
+        }
+
+        private void btHuy_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void SetDefault()
+        {
+            dtpTuNgay.Value = DateTime.Today;
+            dtpTuNgay.Format = DateTimePickerFormat.Custom;
+            dtpTuNgay.CustomFormat = "dd/MM/yyyy";
+
+            dtpDenNgay.Value = DateTime.Today;
+            dtpDenNgay.Format = DateTimePickerFormat.Custom;
+            dtpDenNgay.CustomFormat = "dd/MM/yyyy";
+        }
+
+        private string DateTimeSQLite(DateTime datetime)
+        {
+            string dateTimeFormat = "{0}-{1}-{2}";
+            return string.Format(dateTimeFormat, datetime.Year, CheckString(datetime.Month), CheckString(datetime.Day));
+        }
+
+        private string CheckString(int number)
+        {
+            return number < 10 ? "0" + number.ToString() : number.ToString();
+        }
+
+        private string[] GetParam()
+        {
+            string[] param = new string[3];
+            param[0] = DateTimeSQLite(dtpTuNgay.Value);
+            param[1] = DateTimeSQLite(dtpDenNgay.Value);
+            param[2] = idTho;
+            return param;
         }
     }
 }

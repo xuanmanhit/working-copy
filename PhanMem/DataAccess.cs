@@ -755,6 +755,66 @@ namespace PhanMem
             return tbl;
         }
 
+        public DataTable MayIn_LuongN2()
+        {
+            string cmd = "SELECT * FROM vN2_BcLuongTH";
+            DataTable tbl = LoadData(cmd);
+            tbl.Columns.Add("STT", typeof(Int32));
+            for (int i = 0; i < tbl.Rows.Count; i++)
+                tbl.Rows[i]["STT"] = i + 1;
+            return tbl;
+        }
+
+        public DataTable MayIn_LuongCTThoN2()
+        {
+            string cmd = "SELECT * FROM vN2_BcLuongThoCT";
+            DataTable tbl = LoadData(cmd);
+            tbl.Columns.Add("STT", typeof(Int32));
+            for (int i = 0; i < tbl.Rows.Count; i++)
+                tbl.Rows[i]["STT"] = i + 1;
+            return tbl;
+        }
+
+        public DataTable MayIn_LuongTHThoN2()
+        {
+            string cmd = "SELECT * FROM vN2_BcLuongThoTH";
+            DataTable tbl = LoadData(cmd);
+            tbl.Columns.Add("STT", typeof(Int32));
+            for (int i = 0; i < tbl.Rows.Count; i++)
+                tbl.Rows[i]["STT"] = i + 1;
+            return tbl;
+        }
+
+        public DataTable MayIn_LuongN3()
+        {
+            string cmd = "SELECT * FROM vN3_BcLuongTH";
+            DataTable tbl = LoadData(cmd);
+            tbl.Columns.Add("STT", typeof(Int32));
+            for (int i = 0; i < tbl.Rows.Count; i++)
+                tbl.Rows[i]["STT"] = i + 1;
+            return tbl;
+        }
+
+        public DataTable MayIn_LuongCTThoN3()
+        {
+            string cmd = "SELECT * FROM vN3_BcLuongThoCT";
+            DataTable tbl = LoadData(cmd);
+            tbl.Columns.Add("STT", typeof(Int32));
+            for (int i = 0; i < tbl.Rows.Count; i++)
+                tbl.Rows[i]["STT"] = i + 1;
+            return tbl;
+        }
+
+        public DataTable MayIn_LuongTHThoN3()
+        {
+            string cmd = "SELECT * FROM vN3_BcLuongThoTH";
+            DataTable tbl = LoadData(cmd);
+            tbl.Columns.Add("STT", typeof(Int32));
+            for (int i = 0; i < tbl.Rows.Count; i++)
+                tbl.Rows[i]["STT"] = i + 1;
+            return tbl;
+        }
+
         #endregion
     }
 }

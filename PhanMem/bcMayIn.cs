@@ -28,5 +28,15 @@ namespace PhanMem
             var main = new FormMain();
             main.Show();
         }
+
+        private void bt_bcLuongN2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bt_bcLuongN3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

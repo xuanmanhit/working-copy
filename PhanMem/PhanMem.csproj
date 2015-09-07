@@ -78,6 +78,18 @@
     <Compile Include="bcLuongN1.Designer.cs">
       <DependentUpon>bcLuongN1.cs</DependentUpon>
     </Compile>
+    <Compile Include="bcLuongN2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="bcLuongN2.Designer.cs">
+      <DependentUpon>bcLuongN2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="bcLuongN3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="bcLuongN3.Designer.cs">
+      <DependentUpon>bcLuongN3.cs</DependentUpon>
+    </Compile>
     <Compile Include="bcMayIn.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -266,6 +278,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="bcLuongN1.resx">
       <DependentUpon>bcLuongN1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bcLuongN2.resx">
+      <DependentUpon>bcLuongN2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bcLuongN3.resx">
+      <DependentUpon>bcLuongN3.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="bcMayIn.resx">
       <DependentUpon>bcMayIn.cs</DependentUpon>

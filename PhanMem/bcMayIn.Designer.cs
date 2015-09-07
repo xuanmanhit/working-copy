@@ -31,11 +31,15 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.bt_bcLuongN1 = new System.Windows.Forms.Button();
             this.btBack = new System.Windows.Forms.Button();
+            this.bt_bcLuongN2 = new System.Windows.Forms.Button();
+            this.bt_bcLuongN3 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.bt_bcLuongN3);
+            this.groupBox1.Controls.Add(this.bt_bcLuongN2);
             this.groupBox1.Controls.Add(this.bt_bcLuongN1);
             this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(14, 14);
@@ -45,7 +49,7 @@
             this.groupBox1.Size = new System.Drawing.Size(510, 87);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Báo cáo Nhóm 1";
+            this.groupBox1.Text = "Báo cáo Lương";
             // 
             // bt_bcLuongN1
             // 
@@ -54,7 +58,7 @@
             this.bt_bcLuongN1.Name = "bt_bcLuongN1";
             this.bt_bcLuongN1.Size = new System.Drawing.Size(150, 50);
             this.bt_bcLuongN1.TabIndex = 0;
-            this.bt_bcLuongN1.Text = "Báo cáo Lương";
+            this.bt_bcLuongN1.Text = "Nhóm 1";
             this.bt_bcLuongN1.UseVisualStyleBackColor = true;
             this.bt_bcLuongN1.Click += new System.EventHandler(this.bt_bcLuongN1_Click);
             // 
@@ -69,6 +73,28 @@
             this.btBack.UseVisualStyleBackColor = true;
             this.btBack.Click += new System.EventHandler(this.btBack_Click);
             // 
+            // bt_bcLuongN2
+            // 
+            this.bt_bcLuongN2.Location = new System.Drawing.Point(181, 26);
+            this.bt_bcLuongN2.Margin = new System.Windows.Forms.Padding(5);
+            this.bt_bcLuongN2.Name = "bt_bcLuongN2";
+            this.bt_bcLuongN2.Size = new System.Drawing.Size(150, 50);
+            this.bt_bcLuongN2.TabIndex = 1;
+            this.bt_bcLuongN2.Text = "Nhóm 2";
+            this.bt_bcLuongN2.UseVisualStyleBackColor = true;
+            this.bt_bcLuongN2.Click += new System.EventHandler(this.bt_bcLuongN2_Click);
+            // 
+            // bt_bcLuongN3
+            // 
+            this.bt_bcLuongN3.Location = new System.Drawing.Point(341, 26);
+            this.bt_bcLuongN3.Margin = new System.Windows.Forms.Padding(5);
+            this.bt_bcLuongN3.Name = "bt_bcLuongN3";
+            this.bt_bcLuongN3.Size = new System.Drawing.Size(150, 50);
+            this.bt_bcLuongN3.TabIndex = 2;
+            this.bt_bcLuongN3.Text = "Nhóm 3";
+            this.bt_bcLuongN3.UseVisualStyleBackColor = true;
+            this.bt_bcLuongN3.Click += new System.EventHandler(this.bt_bcLuongN3_Click);
+            // 
             // bcMayIn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
@@ -79,7 +105,7 @@
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "bcMayIn";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -94,5 +120,7 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button bt_bcLuongN1;
         private System.Windows.Forms.Button btBack;
+        private System.Windows.Forms.Button bt_bcLuongN3;
+        private System.Windows.Forms.Button bt_bcLuongN2;
     }
 }
