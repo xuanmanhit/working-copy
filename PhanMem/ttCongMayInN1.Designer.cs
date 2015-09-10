@@ -29,23 +29,23 @@
         private void InitializeComponent()
         {
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label9 = new System.Windows.Forms.Label();
             this.btHuy = new System.Windows.Forms.Button();
+            this.cbKhg = new System.Windows.Forms.ComboBox();
             this.btThem = new System.Windows.Forms.Button();
             this.txtSoluong = new System.Windows.Forms.TextBox();
-            this.dtpNgayCong = new System.Windows.Forms.DateTimePicker();
+            this.txtGhichu = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.dtpNgayCong = new System.Windows.Forms.DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
             this.cbTho = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
             this.cbKhoVai = new System.Windows.Forms.ComboBox();
-            this.txtGhichu = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.cbCongviec = new System.Windows.Forms.ComboBox();
-            this.cbKhg = new System.Windows.Forms.ComboBox();
-            this.label9 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -66,22 +66,39 @@
             this.panel2.Size = new System.Drawing.Size(327, 185);
             this.panel2.TabIndex = 33;
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(18, 24);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(79, 17);
+            this.label9.TabIndex = 32;
+            this.label9.Text = "Khách hàng";
+            // 
             // btHuy
             // 
             this.btHuy.Location = new System.Drawing.Point(177, 128);
             this.btHuy.Name = "btHuy";
             this.btHuy.Size = new System.Drawing.Size(80, 36);
-            this.btHuy.TabIndex = 20;
+            this.btHuy.TabIndex = 8;
             this.btHuy.Text = "Hủy";
             this.btHuy.UseVisualStyleBackColor = true;
             this.btHuy.Click += new System.EventHandler(this.btHuy_Click);
+            // 
+            // cbKhg
+            // 
+            this.cbKhg.FormattingEnabled = true;
+            this.cbKhg.Location = new System.Drawing.Point(134, 21);
+            this.cbKhg.Name = "cbKhg";
+            this.cbKhg.Size = new System.Drawing.Size(171, 25);
+            this.cbKhg.TabIndex = 4;
             // 
             // btThem
             // 
             this.btThem.Location = new System.Drawing.Point(75, 128);
             this.btThem.Name = "btThem";
             this.btThem.Size = new System.Drawing.Size(80, 36);
-            this.btThem.TabIndex = 19;
+            this.btThem.TabIndex = 7;
             this.btThem.Text = "Thêm";
             this.btThem.UseVisualStyleBackColor = true;
             this.btThem.Click += new System.EventHandler(this.btThem_Click);
@@ -91,15 +108,23 @@
             this.txtSoluong.Location = new System.Drawing.Point(134, 58);
             this.txtSoluong.Name = "txtSoluong";
             this.txtSoluong.Size = new System.Drawing.Size(171, 24);
-            this.txtSoluong.TabIndex = 4;
+            this.txtSoluong.TabIndex = 5;
             // 
-            // dtpNgayCong
+            // txtGhichu
             // 
-            this.dtpNgayCong.CustomFormat = "";
-            this.dtpNgayCong.Location = new System.Drawing.Point(123, 22);
-            this.dtpNgayCong.Name = "dtpNgayCong";
-            this.dtpNgayCong.Size = new System.Drawing.Size(171, 24);
-            this.dtpNgayCong.TabIndex = 0;
+            this.txtGhichu.Location = new System.Drawing.Point(134, 93);
+            this.txtGhichu.Name = "txtGhichu";
+            this.txtGhichu.Size = new System.Drawing.Size(171, 24);
+            this.txtGhichu.TabIndex = 6;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(18, 96);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(53, 17);
+            this.label11.TabIndex = 23;
+            this.label11.Text = "Ghi chú";
             // 
             // label8
             // 
@@ -109,6 +134,14 @@
             this.label8.Size = new System.Drawing.Size(81, 17);
             this.label8.TabIndex = 29;
             this.label8.Text = "Số lượng SP";
+            // 
+            // dtpNgayCong
+            // 
+            this.dtpNgayCong.CustomFormat = "";
+            this.dtpNgayCong.Location = new System.Drawing.Point(123, 22);
+            this.dtpNgayCong.Name = "dtpNgayCong";
+            this.dtpNgayCong.Size = new System.Drawing.Size(171, 24);
+            this.dtpNgayCong.TabIndex = 0;
             // 
             // label4
             // 
@@ -136,29 +169,13 @@
             this.label1.TabIndex = 17;
             this.label1.Text = "Ngày Công";
             // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(18, 96);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(53, 17);
-            this.label11.TabIndex = 23;
-            this.label11.Text = "Ghi chú";
-            // 
             // cbKhoVai
             // 
             this.cbKhoVai.FormattingEnabled = true;
             this.cbKhoVai.Location = new System.Drawing.Point(123, 128);
             this.cbKhoVai.Name = "cbKhoVai";
             this.cbKhoVai.Size = new System.Drawing.Size(171, 25);
-            this.cbKhoVai.TabIndex = 2;
-            // 
-            // txtGhichu
-            // 
-            this.txtGhichu.Location = new System.Drawing.Point(134, 93);
-            this.txtGhichu.Name = "txtGhichu";
-            this.txtGhichu.Size = new System.Drawing.Size(171, 24);
-            this.txtGhichu.TabIndex = 6;
+            this.cbKhoVai.TabIndex = 3;
             // 
             // label2
             // 
@@ -200,24 +217,7 @@
             this.cbCongviec.Location = new System.Drawing.Point(123, 93);
             this.cbCongviec.Name = "cbCongviec";
             this.cbCongviec.Size = new System.Drawing.Size(171, 25);
-            this.cbCongviec.TabIndex = 30;
-            // 
-            // cbKhg
-            // 
-            this.cbKhg.FormattingEnabled = true;
-            this.cbKhg.Location = new System.Drawing.Point(134, 21);
-            this.cbKhg.Name = "cbKhg";
-            this.cbKhg.Size = new System.Drawing.Size(171, 25);
-            this.cbKhg.TabIndex = 31;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(18, 24);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(79, 17);
-            this.label9.TabIndex = 32;
-            this.label9.Text = "Khách hàng";
+            this.cbCongviec.TabIndex = 2;
             // 
             // ttCongMayInN1
             // 
@@ -229,7 +229,7 @@
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "ttCongMayInN1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

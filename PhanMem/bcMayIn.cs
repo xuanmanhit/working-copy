@@ -31,10 +31,17 @@ namespace PhanMem
 
         private void bt_bcLuongN2_Click(object sender, EventArgs e)
         {
-
+            var baocao = new bcLuongN2();
+            baocao.ShowDialog();
         }
 
         private void bt_bcLuongN3_Click(object sender, EventArgs e)
+        {
+            var baocao = new bcLuongN3();
+            baocao.ShowDialog();
+        }
+
+        private void bt_bcKhachhang_Click(object sender, EventArgs e)
         {
 
         }

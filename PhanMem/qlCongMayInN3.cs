@@ -36,7 +36,25 @@ namespace PhanMem
             main.Show();
         }
 
-        private void gvCongN3_CellClick(object sender, DataGridViewCellEventArgs e)
+        public void LoadGrid()
+        {
+            int rownum = DA.List_CongN3().Rows.Count;
+            label4.Text = "Danh sách Công Phụ: " + rownum;
+            gvCongPhu.AutoGenerateColumns = false;
+            gvCongPhu.DataSource = DA.List_CongN3();
+        }
+
+        public void LoadGridAndSelect(int rowindex)
+        {
+            int rownum = DA.List_CongN3().Rows.Count;
+            label4.Text = "Danh sách Công Phụ: " + rownum;
+            gvCongPhu.AutoGenerateColumns = false;
+            gvCongPhu.DataSource = DA.List_CongN3();
+            gvCongPhu.Rows[rowindex].Selected = true;
+            gvCongPhu.FirstDisplayedScrollingRowIndex = rowindex;
+        }
+
+        private void gvCongPhu_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             // Sửa
             if (e.ColumnIndex == 0)
@@ -58,24 +76,6 @@ namespace PhanMem
                     LoadGrid();
                 }
             }
-        }
-
-        public void LoadGrid()
-        {
-            int rownum = DA.List_CongN3().Rows.Count;
-            label4.Text = "Danh sách Công Phụ: " + rownum;
-            gvCongPhu.AutoGenerateColumns = false;
-            gvCongPhu.DataSource = DA.List_CongN3();
-        }
-
-        public void LoadGridAndSelect(int rowindex)
-        {
-            int rownum = DA.List_CongN3().Rows.Count;
-            label4.Text = "Danh sách Công Phụ: " + rownum;
-            gvCongPhu.AutoGenerateColumns = false;
-            gvCongPhu.DataSource = DA.List_CongN3();
-            gvCongPhu.Rows[rowindex].Selected = true;
-            gvCongPhu.FirstDisplayedScrollingRowIndex = rowindex;
         }
     }
 }

@@ -646,19 +646,19 @@ namespace PhanMem
 
         public void Add_CongN2(string[] param)
         {
-            string cmd = "INSERT INTO tblCongNhom2 (NgayCong,MayIn,ThoChinh,ThoPhu,GioNhanIn,GioBatDauIn,GioInXong,";
+            string cmd = "INSERT INTO tblCongNhom2 (NgayCong,MayIn,ThoChinh,ThoPhu1,ThoPhu2,ThoPhu3,ThoPhu4,GioNhanIn,GioBatDauIn,GioInXong,";
             cmd += "KhoVai,CongViec,ThoCat,SoLuong,InHu,ThoInHu,InPhe,ThoInPhe,InVayMuc,ThoInVayMuc,InLoi,ThoInLoi,GhiChu)";
-            cmd += " VALUES ('{0}',{1},{2},{3},'{4}','{5}','{6}',{7},{8},{9},{10},{11},{12},{13},{14},{15},{16},{17},{18},'{19}')";
+            cmd += " VALUES ('{0}',{1},{2},{3},{4},{5},{6},'{7}','{8}','{9}',{10},{11},{12},{13},{14},{15},{16},{17},{18},{19},{20},{21},'{22}')";
             cmd = String.Format(cmd, param);
             ExecuteQuery(cmd);
         }
 
         public void Edit_CongN2(string[] param)
         {
-            string cmd = "UPDATE tblCongNhom2 SET NgayCong='{0}',MayIn={1},ThoChinh={2},ThoPhu={3},";
-            cmd += "GioNhanIn='{4}',GioBatDauIn='{5}',GioInXong='{6}',KhoVai={7},CongViec={8},ThoCat={9},SoLuong={10},";
-            cmd += "InHu={11},ThoInHu={12},InPhe={13},ThoInPhe={14},InVayMuc={15},ThoInVayMuc={16},InLoi={17},ThoInLoi={18},";
-            cmd += "GhiChu='{19}' WHERE ID={20}";
+            string cmd = "UPDATE tblCongNhom2 SET NgayCong='{0}',MayIn={1},ThoChinh={2},ThoPhu1={3},ThoPhu2={4},ThoPhu3={5},ThoPhu4={6},";
+            cmd += "GioNhanIn='{7}',GioBatDauIn='{8}',GioInXong='{9}',KhoVai={10},CongViec={11},ThoCat={12},SoLuong={13},";
+            cmd += "InHu={14},ThoInHu={15},InPhe={16},ThoInPhe={17},InVayMuc={18},ThoInVayMuc={19},InLoi={20},ThoInLoi={21},";
+            cmd += "GhiChu='{22}' WHERE ID={23}";
             cmd = String.Format(cmd, param);
             ExecuteQuery(cmd);
         }
@@ -725,6 +725,7 @@ namespace PhanMem
 
         #region Báo cáo May - In
 
+        //NHÓM 1
         public DataTable MayIn_LuongN1()
         {
             string cmd = "SELECT * FROM vN1_BcLuongTH";
@@ -755,6 +756,28 @@ namespace PhanMem
             return tbl;
         }
 
+        public DataTable MayIn_KhachhangCTN1()
+        {
+            string cmd = "SELECT * FROM vN1_BcKhachHangCT";
+            DataTable tbl = LoadData(cmd);
+            tbl.Columns.Add("STT", typeof(Int32));
+            for (int i = 0; i < tbl.Rows.Count; i++)
+                tbl.Rows[i]["STT"] = i + 1;
+            return tbl;
+        }
+
+        public DataTable MayIn_KhachhangTHN1()
+        {
+            string cmd = "SELECT * FROM vN1_BcKhachHangTH";
+            DataTable tbl = LoadData(cmd);
+            tbl.Columns.Add("STT", typeof(Int32));
+            for (int i = 0; i < tbl.Rows.Count; i++)
+                tbl.Rows[i]["STT"] = i + 1;
+            return tbl;
+        }
+        //END NHÓM 1
+
+        //NHÓM 2
         public DataTable MayIn_LuongN2()
         {
             string cmd = "SELECT * FROM vN2_BcLuongTH";
@@ -778,6 +801,18 @@ namespace PhanMem
         public DataTable MayIn_LuongTHThoN2()
         {
             string cmd = "SELECT * FROM vN2_BcLuongThoTH";
+            DataTable tbl = LoadData(cmd);
+            tbl.Columns.Add("STT", typeof(Int32));
+            for (int i = 0; i < tbl.Rows.Count; i++)
+                tbl.Rows[i]["STT"] = i + 1;
+            return tbl;
+        }
+        //END NHÓM 2
+
+        //NHÓM 3
+        public DataTable MayIn_CongviecN3()
+        {
+            string cmd = "SELECT * FROM vN3_BcCongViecTH";
             DataTable tbl = LoadData(cmd);
             tbl.Columns.Add("STT", typeof(Int32));
             for (int i = 0; i < tbl.Rows.Count; i++)
@@ -814,6 +849,7 @@ namespace PhanMem
                 tbl.Rows[i]["STT"] = i + 1;
             return tbl;
         }
+        //END NHÓM 3
 
         #endregion
     }

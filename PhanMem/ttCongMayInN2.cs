@@ -30,24 +30,27 @@ namespace PhanMem
                 DataTable dt = DA.Load_CongN2(new string[] { idN2 });
                 dtpNgayCong.Value = DateTime.ParseExact(dt.Rows[0][1].ToString(), "MM/dd/yyyy", CultureInfo.InvariantCulture);
                 cbThochinh.SelectedValue = dt.Rows[0][2].ToString();
-                cbThophu.SelectedValue = dt.Rows[0][3].ToString();
-                dtpNhanIn.Value = DateTime.ParseExact(dt.Rows[0][4].ToString(), "HH:mm", CultureInfo.InvariantCulture);
-                dtpIn.Value = DateTime.ParseExact(dt.Rows[0][5].ToString(), "HH:mm", CultureInfo.InvariantCulture);
-                dtpInxong.Value = DateTime.ParseExact(dt.Rows[0][6].ToString(), "HH:mm", CultureInfo.InvariantCulture);
-                cbKhoVai.SelectedValue = dt.Rows[0][7].ToString();
-                cbCongviec.SelectedValue = dt.Rows[0][8].ToString();
-                cbThocat.SelectedValue = dt.Rows[0][9].ToString();
-                txtSoSp.Text = dt.Rows[0][10].ToString();
-                txtInHu.Text = dt.Rows[0][11].ToString();
-                cbThoinHu.SelectedValue = dt.Rows[0][12].ToString();
-                txtInPhe.Text = dt.Rows[0][13].ToString();
-                cbThoInPhe.SelectedValue = dt.Rows[0][14].ToString();
-                txtInVayMuc.Text = dt.Rows[0][15].ToString();
-                cbThoInVayMuc.SelectedValue = dt.Rows[0][16].ToString();
-                txtInLoi.Text = dt.Rows[0][17].ToString();
-                cbThoInLoi.SelectedValue = dt.Rows[0][18].ToString();
-                txtGhichu.Text = dt.Rows[0][19].ToString();
-                cbSoMayIn.SelectedValue = dt.Rows[0][20].ToString();
+                cbThophu1.SelectedValue = dt.Rows[0][3].ToString();
+                cbThophu2.SelectedValue = dt.Rows[0][4].ToString();
+                cbThophu3.SelectedValue = dt.Rows[0][5].ToString();
+                cbThophu4.SelectedValue = dt.Rows[0][6].ToString();
+                dtpNhanIn.Value = DateTime.ParseExact(dt.Rows[0][7].ToString(), "HH:mm", CultureInfo.InvariantCulture);
+                dtpIn.Value = DateTime.ParseExact(dt.Rows[0][8].ToString(), "HH:mm", CultureInfo.InvariantCulture);
+                dtpInxong.Value = DateTime.ParseExact(dt.Rows[0][9].ToString(), "HH:mm", CultureInfo.InvariantCulture);
+                cbKhoVai.SelectedValue = dt.Rows[0][10].ToString();
+                cbCongviec.SelectedValue = dt.Rows[0][11].ToString();
+                cbThocat.SelectedValue = dt.Rows[0][12].ToString();
+                txtSoSp.Text = dt.Rows[0][13].ToString();
+                txtInHu.Text = dt.Rows[0][14].ToString();
+                cbThoinHu.SelectedValue = dt.Rows[0][15].ToString();
+                txtInPhe.Text = dt.Rows[0][16].ToString();
+                cbThoInPhe.SelectedValue = dt.Rows[0][17].ToString();
+                txtInVayMuc.Text = dt.Rows[0][18].ToString();
+                cbThoInVayMuc.SelectedValue = dt.Rows[0][19].ToString();
+                txtInLoi.Text = dt.Rows[0][20].ToString();
+                cbThoInLoi.SelectedValue = dt.Rows[0][21].ToString();
+                txtGhichu.Text = dt.Rows[0][22].ToString();
+                cbSoMayIn.SelectedValue = dt.Rows[0][23].ToString();
             }
         }
 
@@ -112,9 +115,22 @@ namespace PhanMem
             cbThochinh.DataSource = DA.List_Tho();
             cbThochinh.ValueMember = "ID";
             cbThochinh.DisplayMember = "HoTen";
-            cbThophu.DataSource = DA.List_Tho();
-            cbThophu.ValueMember = "ID";
-            cbThophu.DisplayMember = "HoTen";
+            cbThophu1.DataSource = DA.List_Tho();
+            cbThophu1.ValueMember = "ID";
+            cbThophu1.DisplayMember = "HoTen";
+            cbThophu1.SelectedValue = 0;
+            cbThophu2.DataSource = DA.List_Tho();
+            cbThophu2.ValueMember = "ID";
+            cbThophu2.DisplayMember = "HoTen";
+            cbThophu2.SelectedValue = 0;
+            cbThophu3.DataSource = DA.List_Tho();
+            cbThophu3.ValueMember = "ID";
+            cbThophu3.DisplayMember = "HoTen";
+            cbThophu3.SelectedValue = 0;
+            cbThophu4.DataSource = DA.List_Tho();
+            cbThophu4.ValueMember = "ID";
+            cbThophu4.DisplayMember = "HoTen";
+            cbThophu4.SelectedValue = 0;
 
             dtpNhanIn.Format = DateTimePickerFormat.Custom;
             dtpNhanIn.CustomFormat = "HH:mm";
@@ -174,28 +190,31 @@ namespace PhanMem
 
         private string[] GetParam()
         {
-            string[] param = new string[21];
+            string[] param = new string[24];
             param[0] = DateTimeSQLite(dtpNgayCong.Value);
             param[1] = cbSoMayIn.SelectedValue.ToString();
             param[2] = cbThochinh.SelectedValue.ToString();
-            param[3] = cbThophu.SelectedValue.ToString();
-            param[4] = timeSQLite(dtpNhanIn.Value);
-            param[5] = timeSQLite(dtpIn.Value);
-            param[6] = timeSQLite(dtpInxong.Value);
-            param[7] = cbKhoVai.SelectedValue.ToString();
-            param[8] = cbCongviec.SelectedValue.ToString();
-            param[9] = cbThocat.SelectedValue.ToString();
-            param[10] = string.IsNullOrEmpty(txtSoSp.Text) ? "0" : txtSoSp.Text.Trim();
-            param[11] = string.IsNullOrEmpty(txtInHu.Text) ? "0" : txtInHu.Text.Trim();
-            param[12] = string.IsNullOrEmpty(txtInHu.Text) || txtInHu.Text == "0" ? "0" : cbThoinHu.SelectedValue.ToString();
-            param[13] = string.IsNullOrEmpty(txtInPhe.Text) ? "0" : txtInPhe.Text.Trim();
-            param[14] = string.IsNullOrEmpty(txtInPhe.Text) || txtInPhe.Text == "0" ? "0" : cbThoInPhe.SelectedValue.ToString();
-            param[15] = string.IsNullOrEmpty(txtInVayMuc.Text) ? "0" : txtInVayMuc.Text.Trim();
-            param[16] = string.IsNullOrEmpty(txtInVayMuc.Text) || txtInVayMuc.Text == "0" ? "0" : cbThoInVayMuc.SelectedValue.ToString();
-            param[17] = string.IsNullOrEmpty(txtInLoi.Text) ? "0" : txtInLoi.Text.Trim();
-            param[18] = string.IsNullOrEmpty(txtInLoi.Text) || txtInLoi.Text == "0" ? "0" : cbThoInLoi.SelectedValue.ToString();
-            param[19] = txtGhichu.Text.Trim();            
-            param[20] = idN2;
+            param[3] = cbThophu1.SelectedValue == null ? "0" : cbThophu1.SelectedValue.ToString();
+            param[4] = cbThophu2.SelectedValue == null ? "0" : cbThophu2.SelectedValue.ToString();
+            param[5] = cbThophu3.SelectedValue == null ? "0" : cbThophu3.SelectedValue.ToString();
+            param[6] = cbThophu4.SelectedValue == null ? "0" : cbThophu4.SelectedValue.ToString();
+            param[7] = timeSQLite(dtpNhanIn.Value);
+            param[8] = timeSQLite(dtpIn.Value);
+            param[9] = timeSQLite(dtpInxong.Value);
+            param[10] = cbKhoVai.SelectedValue.ToString();
+            param[11] = cbCongviec.SelectedValue.ToString();
+            param[12] = cbThocat.SelectedValue.ToString();
+            param[13] = string.IsNullOrEmpty(txtSoSp.Text) ? "0" : txtSoSp.Text.Trim();
+            param[14] = string.IsNullOrEmpty(txtInHu.Text) ? "0" : txtInHu.Text.Trim();
+            param[15] = string.IsNullOrEmpty(txtInHu.Text) || txtInHu.Text == "0" ? "0" : cbThoinHu.SelectedValue.ToString();
+            param[16] = string.IsNullOrEmpty(txtInPhe.Text) ? "0" : txtInPhe.Text.Trim();
+            param[17] = string.IsNullOrEmpty(txtInPhe.Text) || txtInPhe.Text == "0" ? "0" : cbThoInPhe.SelectedValue.ToString();
+            param[18] = string.IsNullOrEmpty(txtInVayMuc.Text) ? "0" : txtInVayMuc.Text.Trim();
+            param[19] = string.IsNullOrEmpty(txtInVayMuc.Text) || txtInVayMuc.Text == "0" ? "0" : cbThoInVayMuc.SelectedValue.ToString();
+            param[20] = string.IsNullOrEmpty(txtInLoi.Text) ? "0" : txtInLoi.Text.Trim();
+            param[21] = string.IsNullOrEmpty(txtInLoi.Text) || txtInLoi.Text == "0" ? "0" : cbThoInLoi.SelectedValue.ToString();
+            param[22] = txtGhichu.Text.Trim();            
+            param[23] = idN2;
             return param;
         }
 

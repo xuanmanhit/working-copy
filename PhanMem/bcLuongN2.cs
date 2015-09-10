@@ -62,11 +62,10 @@ namespace PhanMem
                             }
 
                             worksheet.Cells[2, 1].Value = "Từ ngày: " + dtpTuNgay.Text + " đến ngày: " + dtpDenNgay.Text;
-                            for (int i = 3; i <= 4; i++)
-                            {
-                                worksheet.Cells[5, i].Formula = "SUM(" + worksheet.Cells[6, i].Address + ":" + worksheet.Cells[rowCount + 5, i].Address + ")";
-                            }
-                            worksheet.Cells[5, 3, rowCount + 5, 4].Style.Numberformat.Format = "#,##0";
+                            worksheet.Cells[5, 3].Value = Convert.ToInt32(dt.Compute("SUM(SoCai)", "").ToString());
+                            worksheet.Cells[5, 4].Value = Convert.ToInt32(dt.Compute("SUM(ThanhTien)", "").ToString());
+                            worksheet.Column(3).Style.Numberformat.Format = "#,##0";
+                            worksheet.Column(4).Style.Numberformat.Format = "#,##0";
 
                             // fill dữ liệu chi tiết
                             for (int i = 0; i < rowCount; i++)
@@ -109,6 +108,7 @@ namespace PhanMem
                                 ew.Column(10).Style.Numberformat.Format = "#,##0";
                                 ew.Column(11).Style.Numberformat.Format = "#,##0";
                             }
+                            package.Workbook.Worksheets.Delete(package.Workbook.Worksheets["Sheet2"]);
 
                             package.Save();
 

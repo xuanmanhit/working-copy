@@ -47,10 +47,27 @@ namespace PhanMem
 
                         using (ExcelPackage package = new ExcelPackage(new FileInfo(des)))
                         {
+                            DataTable dtCv = DA.MayIn_CongviecN3();
+                            ExcelWorksheet ewCongviec = package.Workbook.Worksheets["Sheet3"];
+                            int CvrowCount = dtCv.Rows.Count;
+                            ewCongviec.Name = "Tổng hợp công việc";
+
+                            // fill dữ liệu tổng hợp                         
+                            for (int i = 0; i < CvrowCount; i++)
+                            {
+                                ewCongviec.Cells[i + 6, 1].Value = Convert.ToInt32(dtCv.Rows[i]["STT"].ToString());
+                                ewCongviec.Cells[i + 6, 2].Value = dtCv.Rows[i]["TenViec"].ToString();
+                                ewCongviec.Cells[i + 6, 3].Value = Convert.ToInt32(dtCv.Rows[i]["ThanhTien"].ToString());
+                            }
+
+                            ewCongviec.Cells[2, 1].Value = "Từ ngày: " + dtpTuNgay.Text + " đến ngày: " + dtpDenNgay.Text;
+                            ewCongviec.Cells[5, 3].Value = Convert.ToInt32(dtCv.Compute("SUM(ThanhTien)", "").ToString());
+                            ewCongviec.Column(3).Style.Numberformat.Format = "#,##0";
+
                             DataTable dt = DA.MayIn_LuongN3();
                             ExcelWorksheet worksheet = package.Workbook.Worksheets["Sheet1"];
                             int rowCount = dt.Rows.Count;
-                            worksheet.Name = "Tổng hợp";
+                            worksheet.Name = "Tổng hợp lương";
 
                             // fill dữ liệu tổng hợp                         
                             for (int i = 0; i < rowCount; i++)
@@ -95,6 +112,7 @@ namespace PhanMem
                                 ew.Column(3).Style.Numberformat.Format = "#,##0";
                                 ew.Column(7).Style.Numberformat.Format = "#,##0";
                             }
+                            package.Workbook.Worksheets.Delete(package.Workbook.Worksheets["Sheet2"]);
 
                             package.Save();
 

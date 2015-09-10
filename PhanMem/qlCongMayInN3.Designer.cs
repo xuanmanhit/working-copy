@@ -97,6 +97,7 @@
             this.gvCongPhu.ReadOnly = true;
             this.gvCongPhu.Size = new System.Drawing.Size(760, 392);
             this.gvCongPhu.TabIndex = 16;
+            this.gvCongPhu.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvCongPhu_CellClick);
             // 
             // gbtEdit
             // 

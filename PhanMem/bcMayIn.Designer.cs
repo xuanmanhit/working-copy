@@ -29,10 +29,11 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.bt_bcLuongN3 = new System.Windows.Forms.Button();
+            this.bt_bcLuongN2 = new System.Windows.Forms.Button();
             this.bt_bcLuongN1 = new System.Windows.Forms.Button();
             this.btBack = new System.Windows.Forms.Button();
-            this.bt_bcLuongN2 = new System.Windows.Forms.Button();
-            this.bt_bcLuongN3 = new System.Windows.Forms.Button();
+            this.bt_bcKhachhang = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -50,6 +51,28 @@
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Báo cáo Lương";
+            // 
+            // bt_bcLuongN3
+            // 
+            this.bt_bcLuongN3.Location = new System.Drawing.Point(341, 26);
+            this.bt_bcLuongN3.Margin = new System.Windows.Forms.Padding(5);
+            this.bt_bcLuongN3.Name = "bt_bcLuongN3";
+            this.bt_bcLuongN3.Size = new System.Drawing.Size(150, 50);
+            this.bt_bcLuongN3.TabIndex = 2;
+            this.bt_bcLuongN3.Text = "Nhóm 3";
+            this.bt_bcLuongN3.UseVisualStyleBackColor = true;
+            this.bt_bcLuongN3.Click += new System.EventHandler(this.bt_bcLuongN3_Click);
+            // 
+            // bt_bcLuongN2
+            // 
+            this.bt_bcLuongN2.Location = new System.Drawing.Point(181, 26);
+            this.bt_bcLuongN2.Margin = new System.Windows.Forms.Padding(5);
+            this.bt_bcLuongN2.Name = "bt_bcLuongN2";
+            this.bt_bcLuongN2.Size = new System.Drawing.Size(150, 50);
+            this.bt_bcLuongN2.TabIndex = 1;
+            this.bt_bcLuongN2.Text = "Nhóm 2";
+            this.bt_bcLuongN2.UseVisualStyleBackColor = true;
+            this.bt_bcLuongN2.Click += new System.EventHandler(this.bt_bcLuongN2_Click);
             // 
             // bt_bcLuongN1
             // 
@@ -73,27 +96,16 @@
             this.btBack.UseVisualStyleBackColor = true;
             this.btBack.Click += new System.EventHandler(this.btBack_Click);
             // 
-            // bt_bcLuongN2
+            // bt_bcKhachhang
             // 
-            this.bt_bcLuongN2.Location = new System.Drawing.Point(181, 26);
-            this.bt_bcLuongN2.Margin = new System.Windows.Forms.Padding(5);
-            this.bt_bcLuongN2.Name = "bt_bcLuongN2";
-            this.bt_bcLuongN2.Size = new System.Drawing.Size(150, 50);
-            this.bt_bcLuongN2.TabIndex = 1;
-            this.bt_bcLuongN2.Text = "Nhóm 2";
-            this.bt_bcLuongN2.UseVisualStyleBackColor = true;
-            this.bt_bcLuongN2.Click += new System.EventHandler(this.bt_bcLuongN2_Click);
-            // 
-            // bt_bcLuongN3
-            // 
-            this.bt_bcLuongN3.Location = new System.Drawing.Point(341, 26);
-            this.bt_bcLuongN3.Margin = new System.Windows.Forms.Padding(5);
-            this.bt_bcLuongN3.Name = "bt_bcLuongN3";
-            this.bt_bcLuongN3.Size = new System.Drawing.Size(150, 50);
-            this.bt_bcLuongN3.TabIndex = 2;
-            this.bt_bcLuongN3.Text = "Nhóm 3";
-            this.bt_bcLuongN3.UseVisualStyleBackColor = true;
-            this.bt_bcLuongN3.Click += new System.EventHandler(this.bt_bcLuongN3_Click);
+            this.bt_bcKhachhang.Location = new System.Drawing.Point(35, 111);
+            this.bt_bcKhachhang.Margin = new System.Windows.Forms.Padding(5);
+            this.bt_bcKhachhang.Name = "bt_bcKhachhang";
+            this.bt_bcKhachhang.Size = new System.Drawing.Size(150, 50);
+            this.bt_bcKhachhang.TabIndex = 3;
+            this.bt_bcKhachhang.Text = "Khách hàng";
+            this.bt_bcKhachhang.UseVisualStyleBackColor = true;
+            this.bt_bcKhachhang.Click += new System.EventHandler(this.bt_bcKhachhang_Click);
             // 
             // bcMayIn
             // 
@@ -101,6 +113,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(540, 340);
             this.ControlBox = false;
+            this.Controls.Add(this.bt_bcKhachhang);
             this.Controls.Add(this.btBack);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -122,5 +135,6 @@
         private System.Windows.Forms.Button btBack;
         private System.Windows.Forms.Button bt_bcLuongN3;
         private System.Windows.Forms.Button bt_bcLuongN2;
+        private System.Windows.Forms.Button bt_bcKhachhang;
     }
 }

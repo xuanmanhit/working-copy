@@ -66,6 +66,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="bcKhachhang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="bcKhachhang.Designer.cs">
+      <DependentUpon>bcKhachhang.cs</DependentUpon>
+    </Compile>
     <Compile Include="BcLuongCatChiTiet.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -269,6 +275,9 @@
     </Compile>
     <EmbeddedResource Include="BcCongCat.resx">
       <DependentUpon>BcCongCat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bcKhachhang.resx">
+      <DependentUpon>bcKhachhang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BcLuongCat.resx">
       <DependentUpon>BcLuongCat.cs</DependentUpon>

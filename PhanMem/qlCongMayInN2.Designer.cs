@@ -40,6 +40,9 @@
             this.gtxtCongNhan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gtxtKhoVai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gtxtKgCat = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gtxtPheTH = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gtxtPheSuot = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gtxtPheDC = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -74,6 +77,9 @@
             this.gtxtCongNhan,
             this.gtxtKhoVai,
             this.gtxtKgCat,
+            this.Column1,
+            this.Column2,
+            this.Column3,
             this.gtxtPheTH,
             this.gtxtPheSuot,
             this.gtxtPheDC,
@@ -186,10 +192,31 @@
             // 
             // gtxtKgCat
             // 
-            this.gtxtKgCat.DataPropertyName = "ThoPhu";
-            this.gtxtKgCat.HeaderText = "Thợ phụ";
+            this.gtxtKgCat.DataPropertyName = "ThoPhu1";
+            this.gtxtKgCat.HeaderText = "Thợ phụ 1";
             this.gtxtKgCat.Name = "gtxtKgCat";
             this.gtxtKgCat.ReadOnly = true;
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "ThoPhu2";
+            this.Column1.HeaderText = "Thợ Phụ 2";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "ThoPhu3";
+            this.Column2.HeaderText = "Thợ Phụ 3";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "ThoPhu4";
+            this.Column3.HeaderText = "Thợ Phụ 4";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
             // 
             // gtxtPheTH
             // 
@@ -344,6 +371,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn gtxtCongNhan;
         private System.Windows.Forms.DataGridViewTextBoxColumn gtxtKhoVai;
         private System.Windows.Forms.DataGridViewTextBoxColumn gtxtKgCat;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn gtxtPheTH;
         private System.Windows.Forms.DataGridViewTextBoxColumn gtxtPheSuot;
         private System.Windows.Forms.DataGridViewTextBoxColumn gtxtPheDC;
