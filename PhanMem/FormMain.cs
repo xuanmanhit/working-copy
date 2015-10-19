@@ -79,57 +79,41 @@ namespace PhanMem
         private void bt_qlTho_Click(object sender, EventArgs e)
         {
             ActiveForm.Hide();
-            var ql = new qlThoMayIn();
+            var ql = new qlCongNhanMI();
             ql.Show();
         }
 
         private void bt_qlCongViec_Click(object sender, EventArgs e)
         {
             ActiveForm.Hide();
-            var ql = new qlViecMayIn();
-            ql.Show();
-        }
-
-        private void bt_qlKH_Click(object sender, EventArgs e)
-        {
-            ActiveForm.Hide();
-            var ql = new qlKhachHang();
+            var ql = new qlCongViecMI();
             ql.Show();
         }
 
         private void bt_qlCongN1_Click(object sender, EventArgs e)
         {
             ActiveForm.Hide();
-            var ql = new qlCongMayInN1();
+            var ql = new qlCongMay();
             ql.Show();
         }
 
         private void bt_qlCongN2_Click(object sender, EventArgs e)
         {
             ActiveForm.Hide();
-            var ql = new qlCongMayInN2();
+            var ql = new qlCongIn();
             ql.Show();
+        }        
+
+        private void bt_bcMay_Click(object sender, EventArgs e)
+        {
+            var bc = new BcTongHopMay();
+            bc.ShowDialog();
         }
 
-        private void bt_qlCongPhu_Click(object sender, EventArgs e)
+        private void bt_bcIn_Click(object sender, EventArgs e)
         {
-            ActiveForm.Hide();
-            var ql = new qlCongMayInN3();
-            ql.Show();
-        }
-
-        private void bt_qlMayIn_Click(object sender, EventArgs e)
-        {
-            ActiveForm.Hide();
-            var ql = new qlMayIn();
-            ql.Show();
-        }
-
-        private void bt_bcMayIn_Click(object sender, EventArgs e)
-        {
-            ActiveForm.Hide();
-            var bc = new bcMayIn();
-            bc.Show();
+            var bc = new BcTongHopIn();
+            bc.ShowDialog();
         }
     }
 }

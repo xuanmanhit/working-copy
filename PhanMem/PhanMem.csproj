@@ -66,41 +66,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="bcKhachhang.cs">
+    <Compile Include="BcTongHopIn.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="bcKhachhang.Designer.cs">
-      <DependentUpon>bcKhachhang.cs</DependentUpon>
+    <Compile Include="BcTongHopIn.Designer.cs">
+      <DependentUpon>BcTongHopIn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BcTongHopMay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BcTongHopMay.Designer.cs">
+      <DependentUpon>BcTongHopMay.cs</DependentUpon>
     </Compile>
     <Compile Include="BcLuongCatChiTiet.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="BcLuongCatChiTiet.Designer.cs">
       <DependentUpon>BcLuongCatChiTiet.cs</DependentUpon>
-    </Compile>
-    <Compile Include="bcLuongN1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="bcLuongN1.Designer.cs">
-      <DependentUpon>bcLuongN1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="bcLuongN2.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="bcLuongN2.Designer.cs">
-      <DependentUpon>bcLuongN2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="bcLuongN3.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="bcLuongN3.Designer.cs">
-      <DependentUpon>bcLuongN3.cs</DependentUpon>
-    </Compile>
-    <Compile Include="bcMayIn.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="bcMayIn.Designer.cs">
-      <DependentUpon>bcMayIn.cs</DependentUpon>
     </Compile>
     <Compile Include="BcTongHopCat.cs">
       <SubType>Form</SubType>
@@ -129,23 +111,17 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="qlCongMayInN1.cs">
+    <Compile Include="qlCongMay.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="qlCongMayInN1.Designer.cs">
-      <DependentUpon>qlCongMayInN1.cs</DependentUpon>
+    <Compile Include="qlCongMay.Designer.cs">
+      <DependentUpon>qlCongMay.cs</DependentUpon>
     </Compile>
-    <Compile Include="qlCongMayInN2.cs">
+    <Compile Include="qlCongIn.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="qlCongMayInN2.Designer.cs">
-      <DependentUpon>qlCongMayInN2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="qlCongMayInN3.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="qlCongMayInN3.Designer.cs">
-      <DependentUpon>qlCongMayInN3.cs</DependentUpon>
+    <Compile Include="qlCongIn.Designer.cs">
+      <DependentUpon>qlCongIn.cs</DependentUpon>
     </Compile>
     <Compile Include="qlCongNhan.cs">
       <SubType>Form</SubType>
@@ -165,35 +141,23 @@
     <Compile Include="qlCongPhu.Designer.cs">
       <DependentUpon>qlCongPhu.cs</DependentUpon>
     </Compile>
-    <Compile Include="qlKhachHang.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="qlKhachHang.Designer.cs">
-      <DependentUpon>qlKhachHang.cs</DependentUpon>
-    </Compile>
     <Compile Include="qlKhoVai.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="qlKhoVai.Designer.cs">
       <DependentUpon>qlKhoVai.cs</DependentUpon>
     </Compile>
-    <Compile Include="qlMayIn.cs">
+    <Compile Include="qlCongNhanMI.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="qlMayIn.Designer.cs">
-      <DependentUpon>qlMayIn.cs</DependentUpon>
+    <Compile Include="qlCongNhanMI.Designer.cs">
+      <DependentUpon>qlCongNhanMI.cs</DependentUpon>
     </Compile>
-    <Compile Include="qlThoMayIn.cs">
+    <Compile Include="qlCongViecMI.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="qlThoMayIn.Designer.cs">
-      <DependentUpon>qlThoMayIn.cs</DependentUpon>
-    </Compile>
-    <Compile Include="qlViecMayIn.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="qlViecMayIn.Designer.cs">
-      <DependentUpon>qlViecMayIn.cs</DependentUpon>
+    <Compile Include="qlCongViecMI.Designer.cs">
+      <DependentUpon>qlCongViecMI.cs</DependentUpon>
     </Compile>
     <Compile Include="qlViecPhu.cs">
       <SubType>Form</SubType>
@@ -201,23 +165,17 @@
     <Compile Include="qlViecPhu.Designer.cs">
       <DependentUpon>qlViecPhu.cs</DependentUpon>
     </Compile>
-    <Compile Include="ttCongMayInN1.cs">
+    <Compile Include="ttCongMay.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ttCongMayInN1.Designer.cs">
-      <DependentUpon>ttCongMayInN1.cs</DependentUpon>
+    <Compile Include="ttCongMay.Designer.cs">
+      <DependentUpon>ttCongMay.cs</DependentUpon>
     </Compile>
-    <Compile Include="ttCongMayInN2.cs">
+    <Compile Include="ttCongIn.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ttCongMayInN2.Designer.cs">
-      <DependentUpon>ttCongMayInN2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ttCongMayInN3.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ttCongMayInN3.Designer.cs">
-      <DependentUpon>ttCongMayInN3.cs</DependentUpon>
+    <Compile Include="ttCongIn.Designer.cs">
+      <DependentUpon>ttCongIn.cs</DependentUpon>
     </Compile>
     <Compile Include="ttCongNhan.cs">
       <SubType>Form</SubType>
@@ -237,35 +195,23 @@
     <Compile Include="ttCongPhu.Designer.cs">
       <DependentUpon>ttCongPhu.cs</DependentUpon>
     </Compile>
-    <Compile Include="ttKhachHang.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ttKhachHang.Designer.cs">
-      <DependentUpon>ttKhachHang.cs</DependentUpon>
-    </Compile>
     <Compile Include="ttKhoVai.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ttKhoVai.Designer.cs">
       <DependentUpon>ttKhoVai.cs</DependentUpon>
     </Compile>
-    <Compile Include="ttMayIn.cs">
+    <Compile Include="ttCongNhanMI.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ttMayIn.Designer.cs">
-      <DependentUpon>ttMayIn.cs</DependentUpon>
+    <Compile Include="ttCongNhanMI.Designer.cs">
+      <DependentUpon>ttCongNhanMI.cs</DependentUpon>
     </Compile>
-    <Compile Include="ttThoMayIn.cs">
+    <Compile Include="ttCongViecMI.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ttThoMayIn.Designer.cs">
-      <DependentUpon>ttThoMayIn.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ttViecMayIn.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ttViecMayIn.Designer.cs">
-      <DependentUpon>ttViecMayIn.cs</DependentUpon>
+    <Compile Include="ttCongViecMI.Designer.cs">
+      <DependentUpon>ttCongViecMI.cs</DependentUpon>
     </Compile>
     <Compile Include="ttViecPhu.cs">
       <SubType>Form</SubType>
@@ -276,26 +222,17 @@
     <EmbeddedResource Include="BcCongCat.resx">
       <DependentUpon>BcCongCat.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="bcKhachhang.resx">
-      <DependentUpon>bcKhachhang.cs</DependentUpon>
+    <EmbeddedResource Include="BcTongHopIn.resx">
+      <DependentUpon>BcTongHopIn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BcTongHopMay.resx">
+      <DependentUpon>BcTongHopMay.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BcLuongCat.resx">
       <DependentUpon>BcLuongCat.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BcLuongCatChiTiet.resx">
       <DependentUpon>BcLuongCatChiTiet.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="bcLuongN1.resx">
-      <DependentUpon>bcLuongN1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="bcLuongN2.resx">
-      <DependentUpon>bcLuongN2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="bcLuongN3.resx">
-      <DependentUpon>bcLuongN3.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="bcMayIn.resx">
-      <DependentUpon>bcMayIn.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BcTongHopCat.resx">
       <DependentUpon>BcTongHopCat.cs</DependentUpon>
@@ -312,14 +249,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="qlCongMayInN1.resx">
-      <DependentUpon>qlCongMayInN1.cs</DependentUpon>
+    <EmbeddedResource Include="qlCongMay.resx">
+      <DependentUpon>qlCongMay.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="qlCongMayInN2.resx">
-      <DependentUpon>qlCongMayInN2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="qlCongMayInN3.resx">
-      <DependentUpon>qlCongMayInN3.cs</DependentUpon>
+    <EmbeddedResource Include="qlCongIn.resx">
+      <DependentUpon>qlCongIn.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="qlCongNhan.resx">
       <DependentUpon>qlCongNhan.cs</DependentUpon>
@@ -330,32 +264,23 @@
     <EmbeddedResource Include="qlCongPhu.resx">
       <DependentUpon>qlCongPhu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="qlKhachHang.resx">
-      <DependentUpon>qlKhachHang.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="qlKhoVai.resx">
       <DependentUpon>qlKhoVai.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="qlMayIn.resx">
-      <DependentUpon>qlMayIn.cs</DependentUpon>
+    <EmbeddedResource Include="qlCongNhanMI.resx">
+      <DependentUpon>qlCongNhanMI.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="qlThoMayIn.resx">
-      <DependentUpon>qlThoMayIn.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="qlViecMayIn.resx">
-      <DependentUpon>qlViecMayIn.cs</DependentUpon>
+    <EmbeddedResource Include="qlCongViecMI.resx">
+      <DependentUpon>qlCongViecMI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="qlViecPhu.resx">
       <DependentUpon>qlViecPhu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ttCongMayInN1.resx">
-      <DependentUpon>ttCongMayInN1.cs</DependentUpon>
+    <EmbeddedResource Include="ttCongMay.resx">
+      <DependentUpon>ttCongMay.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ttCongMayInN2.resx">
-      <DependentUpon>ttCongMayInN2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ttCongMayInN3.resx">
-      <DependentUpon>ttCongMayInN3.cs</DependentUpon>
+    <EmbeddedResource Include="ttCongIn.resx">
+      <DependentUpon>ttCongIn.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ttCongNhan.resx">
       <DependentUpon>ttCongNhan.cs</DependentUpon>
@@ -366,20 +291,14 @@
     <EmbeddedResource Include="ttCongPhu.resx">
       <DependentUpon>ttCongPhu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ttKhachHang.resx">
-      <DependentUpon>ttKhachHang.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="ttKhoVai.resx">
       <DependentUpon>ttKhoVai.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ttMayIn.resx">
-      <DependentUpon>ttMayIn.cs</DependentUpon>
+    <EmbeddedResource Include="ttCongNhanMI.resx">
+      <DependentUpon>ttCongNhanMI.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ttThoMayIn.resx">
-      <DependentUpon>ttThoMayIn.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ttViecMayIn.resx">
-      <DependentUpon>ttViecMayIn.cs</DependentUpon>
+    <EmbeddedResource Include="ttCongViecMI.resx">
+      <DependentUpon>ttCongViecMI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ttViecPhu.resx">
       <DependentUpon>ttViecPhu.cs</DependentUpon>
