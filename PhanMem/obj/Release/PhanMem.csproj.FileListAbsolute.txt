@@ -22,6 +22,7 @@ D:\Github\working-copy\PhanMem\bin\Release\PhanMem.exe
 D:\Github\working-copy\PhanMem\bin\Release\PhanMem.pdb
 D:\Github\working-copy\PhanMem\bin\Release\EPPlus.dll
 D:\Github\working-copy\PhanMem\bin\Release\System.Data.SQLite.dll
+D:\Github\working-copy\PhanMem\obj\Release\PhanMem.csprojResolveAssemblyReference.cache
 D:\Github\working-copy\PhanMem\obj\Release\PhanMem.BcCongCat.resources
 D:\Github\working-copy\PhanMem\obj\Release\PhanMem.BcTongHopIn.resources
 D:\Github\working-copy\PhanMem\obj\Release\PhanMem.BcTongHopMay.resources

@@ -48,24 +48,26 @@
             this.txtGio2 = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.txtGia2 = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.txtGhichu = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // btHuy
             // 
-            this.btHuy.Location = new System.Drawing.Point(455, 72);
+            this.btHuy.Location = new System.Drawing.Point(455, 81);
             this.btHuy.Name = "btHuy";
             this.btHuy.Size = new System.Drawing.Size(80, 36);
-            this.btHuy.TabIndex = 10;
+            this.btHuy.TabIndex = 11;
             this.btHuy.Text = "Hủy";
             this.btHuy.UseVisualStyleBackColor = true;
             this.btHuy.Click += new System.EventHandler(this.btHuy_Click);
             // 
             // btThem
             // 
-            this.btThem.Location = new System.Drawing.Point(455, 18);
+            this.btThem.Location = new System.Drawing.Point(347, 81);
             this.btThem.Name = "btThem";
             this.btThem.Size = new System.Drawing.Size(80, 36);
-            this.btThem.TabIndex = 9;
+            this.btThem.TabIndex = 10;
             this.btThem.Text = "Thêm";
             this.btThem.UseVisualStyleBackColor = true;
             this.btThem.Click += new System.EventHandler(this.btThem_Click);
@@ -219,12 +221,30 @@
             this.txtGia2.Size = new System.Drawing.Size(68, 24);
             this.txtGia2.TabIndex = 8;
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(27, 226);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(53, 17);
+            this.label10.TabIndex = 40;
+            this.label10.Text = "Ghi chú";
+            // 
+            // txtGhichu
+            // 
+            this.txtGhichu.Location = new System.Drawing.Point(144, 223);
+            this.txtGhichu.Name = "txtGhichu";
+            this.txtGhichu.Size = new System.Drawing.Size(391, 24);
+            this.txtGhichu.TabIndex = 9;
+            // 
             // ttCongMay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(563, 237);
+            this.ClientSize = new System.Drawing.Size(563, 258);
             this.ControlBox = false;
+            this.Controls.Add(this.txtGhichu);
+            this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.txtGia2);
             this.Controls.Add(this.label7);
@@ -279,5 +299,7 @@
         private System.Windows.Forms.TextBox txtGio2;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtGia2;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox txtGhichu;
     }
 }

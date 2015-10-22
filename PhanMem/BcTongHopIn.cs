@@ -63,6 +63,7 @@ namespace PhanMem
                                     worksheet.Cells[n + 6, 6].Value = Convert.ToInt32(dtct.Rows[n]["DonGia"].ToString());
                                     worksheet.Cells[n + 6, 7].Value = Convert.ToInt32(dtct.Rows[n]["ThanhTien"].ToString());
                                     worksheet.Cells[n + 6, 8].Value = dtct.Rows[n]["Tho"].ToString();
+                                    worksheet.Cells[n + 6, 9].Value = dtct.Rows[n]["GhiChu"].ToString();
                                 }
                                 worksheet.Cells[5, 5].Value = Convert.ToInt32(dtct.Compute("SUM(SanPham)", "").ToString());
                                 worksheet.Cells[5, 7].Value = Convert.ToInt32(dtct.Compute("SUM(ThanhTien)", "").ToString());

@@ -506,8 +506,8 @@ namespace PhanMem
 
         public void Add_CongMay(string[] param)
         {
-            string cmd = "INSERT INTO tblCongMay (NgayCong,CongViec,SanPham,KhoVai,Tho1,GioCong1,Tho2,GioCong2,GiaCong2)";
-            cmd += " VALUES ('{0}',{1},{2},{3},{4},{5},{6},{7},{8})";
+            string cmd = "INSERT INTO tblCongMay (NgayCong,CongViec,SanPham,KhoVai,Tho1,GioCong1,Tho2,GioCong2,GiaCong2,GhiChu)";
+            cmd += " VALUES ('{0}',{1},{2},{3},{4},{5},{6},{7},{8},'{9}')";
             cmd = String.Format(cmd, param);
             ExecuteQuery(cmd);
         }
@@ -515,7 +515,7 @@ namespace PhanMem
         public void Edit_CongMay(string[] param)
         {
             string cmd = "UPDATE tblCongMay SET NgayCong='{0}',CongViec={1},SanPham={2},KhoVai={3},";
-            cmd += "Tho1={4},GioCong1={5},Tho2={6},GioCong2={7},GiaCong2={8} WHERE ID={9}";
+            cmd += "Tho1={4},GioCong1={5},Tho2={6},GioCong2={7},GiaCong2={8},GhiChu='{9}' WHERE ID={10}";
             cmd = String.Format(cmd, param);
             ExecuteQuery(cmd);
         }
@@ -552,8 +552,8 @@ namespace PhanMem
         {
             string cmd = "INSERT INTO tblCongIn (NgayCong,CongViec,SanPham,KhoVai,";
             cmd += "Tho1,GioCong1,GiaCong1,Tho2,GioCong2,GiaCong2,Tho3,GioCong3,GiaCong3,Tho4,GioCong4,GiaCong4,";
-            cmd += "InHu,ThoInHu,InPhe,ThoInPhe,VayMuc,ThoVayMuc)";
-            cmd += " VALUES ('{0}',{1},{2},{3},{4},{5},{6},{7},{8},{9},{10},{11},{12},{13},{14},{15},{16},{17},{18},{19},{20},{21})";
+            cmd += "InHu,ThoInHu,InPhe,ThoInPhe,VayMuc,ThoVayMuc,GhiChu)";
+            cmd += " VALUES ('{0}',{1},{2},{3},{4},{5},{6},{7},{8},{9},{10},{11},{12},{13},{14},{15},{16},{17},{18},{19},{20},{21},'{22}')";
             cmd = String.Format(cmd, param);
             ExecuteQuery(cmd);
         }
@@ -562,8 +562,8 @@ namespace PhanMem
         {
             string cmd = "UPDATE tblCongIn SET NgayCong='{0}',CongViec={1},SanPham={2},KhoVai={3},";
             cmd += "Tho1={4},GioCong1={5},GiaCong1={6},Tho2={7},GioCong2={8},GiaCong2={9},Tho3={10},GioCong3={11},GiaCong3={12},";
-            cmd += "Tho4={13},GioCong4={14},GiaCong4={15},InHu={16},ThoInHu={17},InPhe={18},ThoInPhe={19},VayMuc={20},ThoVayMuc={21}";
-            cmd += " WHERE ID={22}";
+            cmd += "Tho4={13},GioCong4={14},GiaCong4={15},InHu={16},ThoInHu={17},InPhe={18},ThoInPhe={19},VayMuc={20},ThoVayMuc={21},GhiChu='{22}'";
+            cmd += " WHERE ID={23}";
             cmd = String.Format(cmd, param);
             ExecuteQuery(cmd);
         }

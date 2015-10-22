@@ -37,6 +37,7 @@ namespace PhanMem
                 cbTho2.SelectedValue = dt.Rows[0][7].ToString();
                 txtGio2.Text = dt.Rows[0][8].ToString();
                 txtGia2.Text = dt.Rows[0][9].ToString();
+                txtGhichu.Text = dt.Rows[0][10].ToString();
             }
         }
 
@@ -103,8 +104,10 @@ namespace PhanMem
             cbTho2.DataSource = DA.List_Tho();
             cbTho2.ValueMember = "ID";
             cbTho2.DisplayMember = "HoTen";
+            cbTho2.SelectedValue = 0;
             txtGio2.Text = string.Empty;
             txtGia2.Text = string.Empty;
+            txtGhichu.Text = string.Empty;
         }
 
         private string DateTimeSQLite(DateTime datetime)
@@ -127,10 +130,11 @@ namespace PhanMem
             param[3] = cbKhoVai.SelectedValue.ToString();
             param[4] = cbTho1.SelectedValue.ToString();
             param[5] = string.IsNullOrEmpty(txtGio1.Text) ? "0" : txtGio1.Text.Trim();
-            param[6] = cbTho2.SelectedValue.ToString();
+            param[6] = cbTho2.SelectedValue == null ? "0" : cbTho2.SelectedValue.ToString();
             param[7] = string.IsNullOrEmpty(txtGio2.Text) ? "0" : txtGio2.Text.Trim();
             param[8] = string.IsNullOrEmpty(txtGia2.Text) ? "0" : txtGia2.Text.Trim();
-            param[9] = idN1;
+            param[9] = txtGhichu.Text.Trim();
+            param[10] = idN1;
             return param;
         }        
     }

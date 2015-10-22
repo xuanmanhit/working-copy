@@ -50,6 +50,7 @@ namespace PhanMem
                 cbThoInPhe.SelectedValue = dt.Rows[0][20].ToString();
                 txtInVayMuc.Text = dt.Rows[0][21].ToString();
                 cbThoInVayMuc.SelectedValue = dt.Rows[0][22].ToString();
+                txtGhichu.Text = dt.Rows[0][23].ToString();
             }
         }
 
@@ -154,18 +155,21 @@ namespace PhanMem
             cbTho2.DataSource = DA.List_Tho();
             cbTho2.ValueMember = "ID";
             cbTho2.DisplayMember = "HoTen";
+            cbTho2.SelectedValue = 0;
             txtGio2.Text = string.Empty;
             txtGia2.Text = string.Empty;
 
             cbTho3.DataSource = DA.List_Tho();
             cbTho3.ValueMember = "ID";
             cbTho3.DisplayMember = "HoTen";
+            cbTho3.SelectedValue = 0;
             txtGio3.Text = string.Empty;
             txtGia3.Text = string.Empty;
 
             cbTho4.DataSource = DA.List_Tho();
             cbTho4.ValueMember = "ID";
             cbTho4.DisplayMember = "HoTen";
+            cbTho4.SelectedValue = 0;
             txtGio4.Text = string.Empty;
             txtGia4.Text = string.Empty;
 
@@ -186,6 +190,8 @@ namespace PhanMem
             cbThoInVayMuc.ValueMember = "ID";
             cbThoInVayMuc.DisplayMember = "HoTen";
             cbThoInVayMuc.SelectedValue = 0;
+
+            txtGhichu.Text = string.Empty;
         }
 
         private string DateTimeSQLite(DateTime datetime)
@@ -209,22 +215,23 @@ namespace PhanMem
             param[4] = cbTho1.SelectedValue.ToString();
             param[5] = string.IsNullOrEmpty(txtGio1.Text) ? "0" : txtGio1.Text.Trim();
             param[6] = string.IsNullOrEmpty(txtGia1.Text) ? "0" : txtGia1.Text.Trim();
-            param[7] = cbTho2.SelectedValue.ToString();
+            param[7] = cbTho2.SelectedValue == null ? "0" : cbTho2.SelectedValue.ToString();
             param[8] = string.IsNullOrEmpty(txtGio2.Text) ? "0" : txtGio2.Text.Trim();
             param[9] = string.IsNullOrEmpty(txtGia2.Text) ? "0" : txtGia2.Text.Trim();
-            param[10] = cbTho3.SelectedValue.ToString();
+            param[10] = cbTho3.SelectedValue == null ? "0" : cbTho3.SelectedValue.ToString();
             param[11] = string.IsNullOrEmpty(txtGio3.Text) ? "0" : txtGio3.Text.Trim();
             param[12] = string.IsNullOrEmpty(txtGia3.Text) ? "0" : txtGia3.Text.Trim();
-            param[13] = cbTho4.SelectedValue.ToString();
+            param[13] = cbTho4.SelectedValue == null ? "0" : cbTho4.SelectedValue.ToString();
             param[14] = string.IsNullOrEmpty(txtGio4.Text) ? "0" : txtGio4.Text.Trim();
             param[15] = string.IsNullOrEmpty(txtGia4.Text) ? "0" : txtGia4.Text.Trim();
             param[16] = string.IsNullOrEmpty(txtInHu.Text) ? "0" : txtInHu.Text.Trim();
-            param[17] = string.IsNullOrEmpty(txtInHu.Text) || txtInHu.Text == "0" ? "0" : cbThoinHu.SelectedValue.ToString();
+            param[17] = cbThoinHu.SelectedValue == null ? "0" : cbThoinHu.SelectedValue.ToString();
             param[18] = string.IsNullOrEmpty(txtInPhe.Text) ? "0" : txtInPhe.Text.Trim();
-            param[19] = string.IsNullOrEmpty(txtInPhe.Text) || txtInPhe.Text == "0" ? "0" : cbThoInPhe.SelectedValue.ToString();
+            param[19] = cbThoInPhe.SelectedValue == null ? "0" : cbThoInPhe.SelectedValue.ToString();
             param[20] = string.IsNullOrEmpty(txtInVayMuc.Text) ? "0" : txtInVayMuc.Text.Trim();
-            param[21] = string.IsNullOrEmpty(txtInVayMuc.Text) || txtInVayMuc.Text == "0" ? "0" : cbThoInVayMuc.SelectedValue.ToString();
-            param[22] = idN2;
+            param[21] = cbThoInVayMuc.SelectedValue == null ? "0" : cbThoInVayMuc.SelectedValue.ToString();
+            param[22] = txtGhichu.Text.Trim();
+            param[23] = idN2;
             return param;
         }
     }

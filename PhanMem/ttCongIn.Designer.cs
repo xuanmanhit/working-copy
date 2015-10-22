@@ -71,6 +71,8 @@
             this.label14 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
+            this.txtGhichu = new System.Windows.Forms.TextBox();
+            this.label20 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // cbThoInVayMuc
@@ -428,12 +430,30 @@
             this.label19.TabIndex = 64;
             this.label19.Text = "Giờ";
             // 
+            // txtGhichu
+            // 
+            this.txtGhichu.Location = new System.Drawing.Point(99, 393);
+            this.txtGhichu.Name = "txtGhichu";
+            this.txtGhichu.Size = new System.Drawing.Size(407, 24);
+            this.txtGhichu.TabIndex = 23;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(23, 396);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(53, 17);
+            this.label20.TabIndex = 66;
+            this.label20.Text = "Ghi chú";
+            // 
             // ttCongIn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(528, 404);
+            this.ClientSize = new System.Drawing.Size(528, 428);
             this.ControlBox = false;
+            this.Controls.Add(this.txtGhichu);
+            this.Controls.Add(this.label20);
             this.Controls.Add(this.label19);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.label14);
@@ -534,5 +554,7 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.TextBox txtGhichu;
+        private System.Windows.Forms.Label label20;
     }
 }
