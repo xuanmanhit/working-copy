@@ -50,24 +50,28 @@
             this.txtGia2 = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.txtGhichu = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.txtGia1 = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.txtDonGia = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // btHuy
             // 
-            this.btHuy.Location = new System.Drawing.Point(455, 81);
+            this.btHuy.Location = new System.Drawing.Point(453, 29);
             this.btHuy.Name = "btHuy";
             this.btHuy.Size = new System.Drawing.Size(80, 36);
-            this.btHuy.TabIndex = 11;
+            this.btHuy.TabIndex = 13;
             this.btHuy.Text = "Hủy";
             this.btHuy.UseVisualStyleBackColor = true;
             this.btHuy.Click += new System.EventHandler(this.btHuy_Click);
             // 
             // btThem
             // 
-            this.btThem.Location = new System.Drawing.Point(347, 81);
+            this.btThem.Location = new System.Drawing.Point(345, 29);
             this.btThem.Name = "btThem";
             this.btThem.Size = new System.Drawing.Size(80, 36);
-            this.btThem.TabIndex = 10;
+            this.btThem.TabIndex = 12;
             this.btThem.Text = "Thêm";
             this.btThem.UseVisualStyleBackColor = true;
             this.btThem.Click += new System.EventHandler(this.btThem_Click);
@@ -111,7 +115,7 @@
             this.cbTho1.Location = new System.Drawing.Point(144, 155);
             this.cbTho1.Name = "cbTho1";
             this.cbTho1.Size = new System.Drawing.Size(171, 25);
-            this.cbTho1.TabIndex = 4;
+            this.cbTho1.TabIndex = 5;
             // 
             // label1
             // 
@@ -128,7 +132,7 @@
             this.cbKhoVai.Location = new System.Drawing.Point(144, 121);
             this.cbKhoVai.Name = "cbKhoVai";
             this.cbKhoVai.Size = new System.Drawing.Size(171, 25);
-            this.cbKhoVai.TabIndex = 3;
+            this.cbKhoVai.TabIndex = 4;
             // 
             // label2
             // 
@@ -161,7 +165,7 @@
             this.txtGio1.Location = new System.Drawing.Point(357, 156);
             this.txtGio1.Name = "txtGio1";
             this.txtGio1.Size = new System.Drawing.Size(68, 24);
-            this.txtGio1.TabIndex = 5;
+            this.txtGio1.TabIndex = 6;
             // 
             // cbTho2
             // 
@@ -169,7 +173,7 @@
             this.cbTho2.Location = new System.Drawing.Point(144, 189);
             this.cbTho2.Name = "cbTho2";
             this.cbTho2.Size = new System.Drawing.Size(171, 25);
-            this.cbTho2.TabIndex = 6;
+            this.cbTho2.TabIndex = 8;
             // 
             // label5
             // 
@@ -203,7 +207,7 @@
             this.txtGio2.Location = new System.Drawing.Point(357, 190);
             this.txtGio2.Name = "txtGio2";
             this.txtGio2.Size = new System.Drawing.Size(68, 24);
-            this.txtGio2.TabIndex = 7;
+            this.txtGio2.TabIndex = 9;
             // 
             // label9
             // 
@@ -219,7 +223,7 @@
             this.txtGia2.Location = new System.Drawing.Point(467, 189);
             this.txtGia2.Name = "txtGia2";
             this.txtGia2.Size = new System.Drawing.Size(68, 24);
-            this.txtGia2.TabIndex = 8;
+            this.txtGia2.TabIndex = 10;
             // 
             // label10
             // 
@@ -235,7 +239,39 @@
             this.txtGhichu.Location = new System.Drawing.Point(144, 223);
             this.txtGhichu.Name = "txtGhichu";
             this.txtGhichu.Size = new System.Drawing.Size(391, 24);
-            this.txtGhichu.TabIndex = 9;
+            this.txtGhichu.TabIndex = 11;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(432, 158);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(28, 17);
+            this.label11.TabIndex = 42;
+            this.label11.Text = "Giá";
+            // 
+            // txtGia1
+            // 
+            this.txtGia1.Location = new System.Drawing.Point(467, 155);
+            this.txtGia1.Name = "txtGia1";
+            this.txtGia1.Size = new System.Drawing.Size(68, 24);
+            this.txtGia1.TabIndex = 7;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(322, 91);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(28, 17);
+            this.label12.TabIndex = 44;
+            this.label12.Text = "Giá";
+            // 
+            // txtDonGia
+            // 
+            this.txtDonGia.Location = new System.Drawing.Point(357, 88);
+            this.txtDonGia.Name = "txtDonGia";
+            this.txtDonGia.Size = new System.Drawing.Size(68, 24);
+            this.txtDonGia.TabIndex = 3;
             // 
             // ttCongMay
             // 
@@ -243,6 +279,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(563, 258);
             this.ControlBox = false;
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.txtDonGia);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.txtGia1);
             this.Controls.Add(this.txtGhichu);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
@@ -301,5 +341,9 @@
         private System.Windows.Forms.TextBox txtGia2;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox txtGhichu;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox txtGia1;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox txtDonGia;
     }
 }

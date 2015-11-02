@@ -506,16 +506,16 @@ namespace PhanMem
 
         public void Add_CongMay(string[] param)
         {
-            string cmd = "INSERT INTO tblCongMay (NgayCong,CongViec,SanPham,KhoVai,Tho1,GioCong1,Tho2,GioCong2,GiaCong2,GhiChu)";
-            cmd += " VALUES ('{0}',{1},{2},{3},{4},{5},{6},{7},{8},'{9}')";
+            string cmd = "INSERT INTO tblCongMay (NgayCong,CongViec,SanPham,DonGia,KhoVai,Tho1,GioCong1,GiaCong1,Tho2,GioCong2,GiaCong2,GhiChu)";
+            cmd += " VALUES ('{0}',{1},{2},{3},{4},{5},{6},{7},{8},{9},{10},'{11}')";
             cmd = String.Format(cmd, param);
             ExecuteQuery(cmd);
         }
 
         public void Edit_CongMay(string[] param)
         {
-            string cmd = "UPDATE tblCongMay SET NgayCong='{0}',CongViec={1},SanPham={2},KhoVai={3},";
-            cmd += "Tho1={4},GioCong1={5},Tho2={6},GioCong2={7},GiaCong2={8},GhiChu='{9}' WHERE ID={10}";
+            string cmd = "UPDATE tblCongMay SET NgayCong='{0}',CongViec={1},SanPham={2},DonGia={3},KhoVai={4},";
+            cmd += "Tho1={5},GioCong1={6},GiaCong2={7},Tho2={8},GioCong2={9},GiaCong2={10},GhiChu='{11}' WHERE ID={12}";
             cmd = String.Format(cmd, param);
             ExecuteQuery(cmd);
         }

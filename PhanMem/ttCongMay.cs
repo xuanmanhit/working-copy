@@ -31,13 +31,15 @@ namespace PhanMem
                 dtpNgayCong.Value = DateTime.ParseExact(dt.Rows[0][1].ToString(), "MM/dd/yyyy", CultureInfo.InvariantCulture); ;
                 cbCongviec.SelectedValue = dt.Rows[0][2].ToString();
                 txtSanpham.Text = dt.Rows[0][3].ToString();
-                cbKhoVai.SelectedValue = dt.Rows[0][4].ToString();
-                cbTho1.SelectedValue = dt.Rows[0][5].ToString();
-                txtGio1.Text = dt.Rows[0][6].ToString();
-                cbTho2.SelectedValue = dt.Rows[0][7].ToString();
-                txtGio2.Text = dt.Rows[0][8].ToString();
-                txtGia2.Text = dt.Rows[0][9].ToString();
-                txtGhichu.Text = dt.Rows[0][10].ToString();
+                txtDonGia.Text = dt.Rows[0][4].ToString();
+                cbKhoVai.SelectedValue = dt.Rows[0][5].ToString();
+                cbTho1.SelectedValue = dt.Rows[0][6].ToString();
+                txtGio1.Text = dt.Rows[0][7].ToString();
+                txtGia1.Text = dt.Rows[0][8].ToString();
+                cbTho2.SelectedValue = dt.Rows[0][9].ToString();
+                txtGio2.Text = dt.Rows[0][10].ToString();
+                txtGia2.Text = dt.Rows[0][11].ToString();
+                txtGhichu.Text = dt.Rows[0][12].ToString();
             }
         }
 
@@ -48,8 +50,12 @@ namespace PhanMem
                 int icheck;
                 if (!string.IsNullOrEmpty(txtSanpham.Text) && (!int.TryParse(txtSanpham.Text.Trim(), out icheck) || icheck < 0))
                     MessageBox.Show("Số lượng SP phải là số nguyên!");
+                else if (!string.IsNullOrEmpty(txtDonGia.Text) && (!int.TryParse(txtDonGia.Text.Trim(), out icheck) || icheck < 0))
+                    MessageBox.Show("Đơn giá phải là số nguyên!");
                 else if (!string.IsNullOrEmpty(txtGio1.Text) && (!int.TryParse(txtGio1.Text.Trim(), out icheck) || icheck < 0))
                     MessageBox.Show("Giờ công thợ chính phải là số nguyên!");
+                else if (!string.IsNullOrEmpty(txtGia1.Text) && (!int.TryParse(txtGia1.Text.Trim(), out icheck) || icheck < 0))
+                    MessageBox.Show("Giá công thợ chính phải là số nguyên!");
                 else if (!string.IsNullOrEmpty(txtGio2.Text) && (!int.TryParse(txtGio2.Text.Trim(), out icheck) || icheck < 0))
                     MessageBox.Show("Giờ công thợ phụ phải là số nguyên!");
                 else if (!string.IsNullOrEmpty(txtGia2.Text) && (!int.TryParse(txtGia2.Text.Trim(), out icheck) || icheck < 0))
@@ -66,8 +72,12 @@ namespace PhanMem
                 int icheck;
                 if (!string.IsNullOrEmpty(txtSanpham.Text) && (!int.TryParse(txtSanpham.Text.Trim(), out icheck) || icheck < 0))
                     MessageBox.Show("Số lượng SP phải là số nguyên!");
+                else if (!string.IsNullOrEmpty(txtDonGia.Text) && (!int.TryParse(txtDonGia.Text.Trim(), out icheck) || icheck < 0))
+                    MessageBox.Show("Đơn giá phải là số nguyên!");
                 else if (!string.IsNullOrEmpty(txtGio1.Text) && (!int.TryParse(txtGio1.Text.Trim(), out icheck) || icheck < 0))
                     MessageBox.Show("Giờ công thợ chính phải là số nguyên!");
+                else if (!string.IsNullOrEmpty(txtGia1.Text) && (!int.TryParse(txtGia1.Text.Trim(), out icheck) || icheck < 0))
+                    MessageBox.Show("Giá công thợ chính phải là số nguyên!");
                 else if (!string.IsNullOrEmpty(txtGio2.Text) && (!int.TryParse(txtGio2.Text.Trim(), out icheck) || icheck < 0))
                     MessageBox.Show("Giờ công thợ phụ phải là số nguyên!");
                 else if (!string.IsNullOrEmpty(txtGia2.Text) && (!int.TryParse(txtGia2.Text.Trim(), out icheck) || icheck < 0))
@@ -94,6 +104,7 @@ namespace PhanMem
             cbCongviec.ValueMember = "ID";
             cbCongviec.DisplayMember = "TenCongViec";
             txtSanpham.Text = string.Empty;
+            txtDonGia.Text = string.Empty;
             cbKhoVai.DataSource = DA.List_KhoVaiMayIn();
             cbKhoVai.ValueMember = "ID";
             cbKhoVai.DisplayMember = "KhoVai";
@@ -101,6 +112,7 @@ namespace PhanMem
             cbTho1.ValueMember = "ID";
             cbTho1.DisplayMember = "HoTen";
             txtGio1.Text = string.Empty;
+            txtGia1.Text = string.Empty;
             cbTho2.DataSource = DA.List_Tho();
             cbTho2.ValueMember = "ID";
             cbTho2.DisplayMember = "HoTen";
@@ -123,18 +135,20 @@ namespace PhanMem
 
         private string[] GetParam()
         {
-            string[] param = new string[11];
+            string[] param = new string[13];
             param[0] = DateTimeSQLite(dtpNgayCong.Value);
             param[1] = cbCongviec.SelectedValue.ToString();
             param[2] = string.IsNullOrEmpty(txtSanpham.Text) ? "0" : txtSanpham.Text.Trim();
-            param[3] = cbKhoVai.SelectedValue.ToString();
-            param[4] = cbTho1.SelectedValue.ToString();
-            param[5] = string.IsNullOrEmpty(txtGio1.Text) ? "0" : txtGio1.Text.Trim();
-            param[6] = cbTho2.SelectedValue == null ? "0" : cbTho2.SelectedValue.ToString();
-            param[7] = string.IsNullOrEmpty(txtGio2.Text) ? "0" : txtGio2.Text.Trim();
-            param[8] = string.IsNullOrEmpty(txtGia2.Text) ? "0" : txtGia2.Text.Trim();
-            param[9] = txtGhichu.Text.Trim();
-            param[10] = idN1;
+            param[3] = string.IsNullOrEmpty(txtDonGia.Text) ? "0" : txtDonGia.Text.Trim();
+            param[4] = cbKhoVai.SelectedValue.ToString();
+            param[5] = cbTho1.SelectedValue.ToString();
+            param[6] = string.IsNullOrEmpty(txtGio1.Text) ? "0" : txtGio1.Text.Trim();
+            param[7] = string.IsNullOrEmpty(txtGia1.Text) ? "0" : txtGia1.Text.Trim();
+            param[8] = cbTho2.SelectedValue == null ? "0" : cbTho2.SelectedValue.ToString();
+            param[9] = string.IsNullOrEmpty(txtGio2.Text) ? "0" : txtGio2.Text.Trim();
+            param[10] = string.IsNullOrEmpty(txtGia2.Text) ? "0" : txtGia2.Text.Trim();
+            param[11] = txtGhichu.Text.Trim();
+            param[12] = idN1;
             return param;
         }        
     }
