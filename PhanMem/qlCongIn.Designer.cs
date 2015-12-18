@@ -29,9 +29,6 @@
         private void InitializeComponent()
         {
             this.gvCongN2 = new System.Windows.Forms.DataGridView();
-            this.btThem = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.btBack = new System.Windows.Forms.Button();
             this.gbtEdit = new System.Windows.Forms.DataGridViewButtonColumn();
             this.gbtDel = new System.Windows.Forms.DataGridViewButtonColumn();
             this.gtxtID = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,6 +44,11 @@
             this.gtInHu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gtInPhe = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gtInVayMuc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btThem = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.btBack = new System.Windows.Forms.Button();
+            this.btImport = new System.Windows.Forms.Button();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.gvCongN2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -78,36 +80,6 @@
             this.gvCongN2.Size = new System.Drawing.Size(760, 392);
             this.gvCongN2.TabIndex = 15;
             this.gvCongN2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvCongN2_CellClick);
-            // 
-            // btThem
-            // 
-            this.btThem.Location = new System.Drawing.Point(606, 12);
-            this.btThem.Name = "btThem";
-            this.btThem.Size = new System.Drawing.Size(80, 36);
-            this.btThem.TabIndex = 14;
-            this.btThem.Text = "Thêm";
-            this.btThem.UseVisualStyleBackColor = true;
-            this.btThem.Click += new System.EventHandler(this.btThem_Click);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(12, 24);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(122, 17);
-            this.label4.TabIndex = 13;
-            this.label4.Text = "Danh sách Công In";
-            // 
-            // btBack
-            // 
-            this.btBack.Location = new System.Drawing.Point(692, 12);
-            this.btBack.Name = "btBack";
-            this.btBack.Size = new System.Drawing.Size(80, 36);
-            this.btBack.TabIndex = 12;
-            this.btBack.Text = "Trở lại";
-            this.btBack.UseVisualStyleBackColor = true;
-            this.btBack.Click += new System.EventHandler(this.btBack_Click);
             // 
             // gbtEdit
             // 
@@ -228,12 +200,57 @@
             this.gtInVayMuc.ReadOnly = true;
             this.gtInVayMuc.Width = 120;
             // 
+            // btThem
+            // 
+            this.btThem.Location = new System.Drawing.Point(606, 12);
+            this.btThem.Name = "btThem";
+            this.btThem.Size = new System.Drawing.Size(80, 36);
+            this.btThem.TabIndex = 14;
+            this.btThem.Text = "Thêm";
+            this.btThem.UseVisualStyleBackColor = true;
+            this.btThem.Click += new System.EventHandler(this.btThem_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(12, 24);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(122, 17);
+            this.label4.TabIndex = 13;
+            this.label4.Text = "Danh sách Công In";
+            // 
+            // btBack
+            // 
+            this.btBack.Location = new System.Drawing.Point(692, 12);
+            this.btBack.Name = "btBack";
+            this.btBack.Size = new System.Drawing.Size(80, 36);
+            this.btBack.TabIndex = 12;
+            this.btBack.Text = "Trở lại";
+            this.btBack.UseVisualStyleBackColor = true;
+            this.btBack.Click += new System.EventHandler(this.btBack_Click);
+            // 
+            // btImport
+            // 
+            this.btImport.Location = new System.Drawing.Point(513, 12);
+            this.btImport.Name = "btImport";
+            this.btImport.Size = new System.Drawing.Size(87, 36);
+            this.btImport.TabIndex = 17;
+            this.btImport.Text = "Nhập từ file";
+            this.btImport.UseVisualStyleBackColor = true;
+            this.btImport.Click += new System.EventHandler(this.btImport_Click);
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog1_FileOk);
+            // 
             // qlCongIn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 462);
             this.ControlBox = false;
+            this.Controls.Add(this.btImport);
             this.Controls.Add(this.gvCongN2);
             this.Controls.Add(this.btThem);
             this.Controls.Add(this.label4);
@@ -272,5 +289,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn gtInHu;
         private System.Windows.Forms.DataGridViewTextBoxColumn gtInPhe;
         private System.Windows.Forms.DataGridViewTextBoxColumn gtInVayMuc;
+        private System.Windows.Forms.Button btImport;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }

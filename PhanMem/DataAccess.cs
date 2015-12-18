@@ -19,16 +19,16 @@ namespace PhanMem
 
         private void SetConnection()
         {
-            sql_Con = new SQLiteConnection(@"Data Source=D:\Github\working-copy\PhanMem\Data\QuanLy.sqlite;Version=3;");
+            //sql_Con = new SQLiteConnection(@"Data Source=D:\Github\working-copy\PhanMem\Data\QuanLy.sqlite;Version=3;");
             //sql_Con = new SQLiteConnection(@"Data Source=E:\Working\Github\working-copy\PhanMem\Data\QuanLy.sqlite;Version=3;");
-            //sql_Con = new SQLiteConnection(@"Data Source=Data\QuanLy.sqlite;Version=3;");
+            sql_Con = new SQLiteConnection(@"Data Source=Data\QuanLy.sqlite;Version=3;");
         }
 
         public string SourceFile()
         {
-            return @"D:\Github\working-copy\PhanMem\";
+            //return @"D:\Github\working-copy\PhanMem\";
             //return @"E:\Working\Github\working-copy\PhanMem\";
-            //return "";
+            return "";
         }
 
         private void ExecuteQuery(string txtQuery)
@@ -120,6 +120,20 @@ namespace PhanMem
             return LoadData(cmd);
         }
 
+        public String Find_CongNhan(string tenCN)
+        {
+            string cmd = "SELECT ID FROM tblCongNhan WHERE HoTen = '" + tenCN + "' AND TinhTrang = 1 AND CongViec = 'Cắt'";
+            DataTable tbl = LoadData(cmd);
+            return tbl.Rows[0][0].ToString();
+        }
+
+        public String Find_CongNhan2(string tenCN)
+        {
+            string cmd = "SELECT ID FROM tblCongNhan WHERE HoTen = '" + tenCN + "' AND TinhTrang = 1 AND CongViec = 'Dệt'";
+            DataTable tbl = LoadData(cmd);
+            return tbl.Rows[0][0].ToString();
+        }
+
         #endregion
 
         #region Việc Phụ
@@ -208,6 +222,13 @@ namespace PhanMem
             string cmd = "SELECT * FROM tblKhoVai WHERE ID={0}";
             cmd = String.Format(cmd, param);
             return LoadData(cmd);
+        }
+
+        public String Find_KhoVai(string tenKV)
+        {
+            string cmd = "SELECT ID FROM tblKhoVai WHERE KhoVai = '" + tenKV + "' AND TinhTrang = 1";
+            DataTable tbl = LoadData(cmd);
+            return tbl.Rows[0][0].ToString();
         }
 
         #endregion
@@ -426,6 +447,13 @@ namespace PhanMem
             return LoadData(cmd);
         }
 
+        public String Find_ThoMayIn(string tenTho)
+        {
+            string cmd = "SELECT ID FROM tblCongNhanMI WHERE HoTen = '" + tenTho + "' AND TinhTrang = 1";
+            DataTable tbl = LoadData(cmd);
+            return tbl.Rows[0][0].ToString();
+        }
+
         #endregion
 
         #region Công việc May - In
@@ -466,6 +494,13 @@ namespace PhanMem
             string cmd = "SELECT * FROM tblCongViecMI WHERE ID={0}";
             cmd = String.Format(cmd, param);
             return LoadData(cmd);
+        }
+
+        public String Find_ViecMayIn(string tenViec)
+        {
+            string cmd = "SELECT ID FROM tblCongViecMI WHERE TenCongViec = '" + tenViec + "' AND TinhTrang = 1";
+            DataTable tbl = LoadData(cmd);
+            return tbl.Rows[0][0].ToString();
         }
 
         #endregion

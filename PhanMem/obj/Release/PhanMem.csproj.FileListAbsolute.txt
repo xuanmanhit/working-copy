@@ -51,3 +51,4 @@ D:\Github\working-copy\PhanMem\obj\Release\PhanMem.ttViecPhu.resources
 D:\Github\working-copy\PhanMem\obj\Release\PhanMem.csproj.GenerateResource.Cache
 D:\Github\working-copy\PhanMem\obj\Release\PhanMem.exe
 D:\Github\working-copy\PhanMem\obj\Release\PhanMem.pdb
+D:\Github\working-copy\PhanMem\obj\Release\PhanMem.csprojResolveAssemblyReference.cache

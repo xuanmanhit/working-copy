@@ -46,6 +46,8 @@
             this.gtxtSoluongSP = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gtxtLuongSP = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gtxtCongNhat = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.btImport = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.gvCongCat)).BeginInit();
             this.SuspendLayout();
             // 
@@ -219,12 +221,27 @@
             this.gtxtCongNhat.Name = "gtxtCongNhat";
             this.gtxtCongNhat.ReadOnly = true;
             // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog1_FileOk);
+            // 
+            // btImport
+            // 
+            this.btImport.Location = new System.Drawing.Point(513, 12);
+            this.btImport.Name = "btImport";
+            this.btImport.Size = new System.Drawing.Size(87, 36);
+            this.btImport.TabIndex = 12;
+            this.btImport.Text = "Nhập từ file";
+            this.btImport.UseVisualStyleBackColor = true;
+            this.btImport.Click += new System.EventHandler(this.btImport_Click);
+            // 
             // qlCongCat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 462);
             this.ControlBox = false;
+            this.Controls.Add(this.btImport);
             this.Controls.Add(this.gvCongCat);
             this.Controls.Add(this.btThem);
             this.Controls.Add(this.label4);
@@ -263,5 +280,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn gtxtSoluongSP;
         private System.Windows.Forms.DataGridViewTextBoxColumn gtxtLuongSP;
         private System.Windows.Forms.DataGridViewTextBoxColumn gtxtCongNhat;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.Button btImport;
     }
 }
